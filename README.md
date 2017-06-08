@@ -40,8 +40,9 @@ This is a Wordpress site.
 1. Log into your local Wordpress dashboard at http://local.whiteselectronics.com/wp/wp-login.php using the staging credentials found below
 1. If a database update is required, do the update
 1. Navigate to `Appearance > Themes` and activate the Whites Electronics theme.
-1. Run `gulp` ( from the theme root ) to compile assets
-1. Start gulp watch `gulp watch` and begin development
+
+## To Do
+1. Fix build issues through `gulp` (from the theme root). It looks like the `source` and `build` files are out of sync
 
 ## Production / Staging Info ##
 
