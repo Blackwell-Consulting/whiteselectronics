@@ -21,7 +21,7 @@ This is a Wordpress site.
 1. Copy `sample-htaccess.txt` to `.htaccess` file into your webroot
 1. Create a `plugins` folder under `wp-content`
 1. Create an `uploads` folder under `wp-content`
-1. Log into the staging server via SFTP (credentials found in [Basecamp](https://3.basecamp.com/3542477/buckets/3913575/documents/545118669)) and download `wp-content/uploads` and `wp-content/plugins` directories into the same folder in your local project ( ignore themes and mu-plugins folders )
+1. Log into the staging server via SFTP (credentials found in [Basecamp](https://3.basecamp.com/3542477/buckets/3913575/documents/545118669)) and download `wp-content/uploads` and `wp-content/plugins` directories into the same folder in your local project (ignore themes and mu-plugins folders)
 1. Log into the WP Engine control panel https://my.wpengine.com/
 1. Navigate to the whiteselectronics install
 1. Click on `phpmyadmin` in the side left menu
