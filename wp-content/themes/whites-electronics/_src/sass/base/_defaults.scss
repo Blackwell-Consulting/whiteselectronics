@@ -1,0 +1,220 @@
+// ================================
+// Base & Typography Defaults
+// ================================
+
+// --------------------------------
+// Pseudo
+// --------------------------------
+
+::selection {
+	background: #777;
+	color: #fff;
+	text-shadow: none;
+}
+
+// --------------------------------
+// General
+// --------------------------------
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background: #fff;
+	color: #000;
+	@include setfont(default);
+	font-size: $body-font-size;
+	@include font-smoothing;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+	transition: color $timing-fast ease-in-out;
+	&:hover,
+	&:focus {
+		color: setcolor(bright-blue);
+	}
+	&:focus {
+		outline: none;
+	}
+}
+
+
+// --------------------------------
+// Headlines
+// --------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1;
+	a {
+		color: #000;
+	}
+}
+
+
+// --------------------------------
+// Text Components
+// --------------------------------
+
+p,
+dl,
+address {
+	@extend %type-medium;
+}
+
+p,
+li,
+dt,
+dd {
+	font-weight: normal;
+	font-style: normal;
+}
+
+li {
+	line-height: 1;
+}
+
+
+// --------------------------------
+// Extend WYSIWYG Styles
+// --------------------------------
+
+.wysiwyg {
+	@extend %wysiwyg;
+  a {
+    color: setcolor(bright-blue);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  ol {
+    margin-left: 0;
+    li {
+      margin-left: rem(25px);
+    }
+  }
+  .woocommerce-page & {
+    a {
+      color: unset;
+      &:hover {
+        text-decoration: none;
+        color: setcolor(bright-blue);
+      }
+    }
+  }
+  .woocommerce-account &
+  a {
+    color: setcolor(bright-blue);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.content {
+  @include setfont(font-one, 400);
+  .page-template-default & {
+	  margin: rem(12px auto);
+	  @include mq(medium) {
+		  margin: rem(40px auto);
+    }
+    @include mq(large) {
+    	margin-top: rem(72px);
+    	margin-bottom: rem(72px);
+    }
+  }
+  &.text-wrapper {
+    padding: rem(10px 0 60px);
+    max-width: rem(602px);
+    margin: 0 auto;
+    @include mq(medium) {
+      padding: rem(60px 0);
+    }
+  }
+  .woocommerce-page &.text-wrapper {
+    max-width: 100%;
+  }
+  .woocommerce-order-received &.text-wrapper {
+    max-width: rem(602px);
+  }
+  h2 {
+  	font-size: rem(20px);
+  	line-height: 1.3;
+    margin-bottom: rem(20px);
+  	@include mq(large) {
+  		font-size: rem(28px);
+  	}
+  }
+  h3 {
+    font-size: rem(18px);
+    line-height: 1.3;
+    margin-bottom: rem(20px);
+    @include mq(large) {
+      font-size: rem(26px);
+    }
+  }
+  p {
+    margin-bottom: rem(20px);
+    font-size: rem(17px);
+    @include mq(large) {
+      font-size: rem(20px);
+    }
+  }
+  blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  }
+  blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  blockquote p {
+    display: inline;
+  }
+  img {
+    display: block;
+    margin: rem(30px auto);
+  }
+  hr {
+    margin-bottom: rem(28px);
+  }
+  li {
+    margin-left: rem(30px);
+    margin-bottom: rem(20px);
+    font-size: rem(18px);
+    line-height: 1.3;
+  }
+  strong {
+    // display: block;
+    // margin: rem(20px 0);
+    // font-size: rem(20px);
+    // @include mq(large) {
+    //   font-size: rem(24px);
+    //   margin: rem(30px 0);
+    // }
+  }
+  .default-font,
+  .question {
+    @include setfont(default,600);
+  }
+
+  .question {
+    display: block;
+    top: rem(-130px);
+    visibility: hidden;
+  }
+}

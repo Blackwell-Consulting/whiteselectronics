@@ -1,0 +1,56 @@
+// ================================
+// Colors
+// ================================
+
+// --------------------------------
+// Color Map
+// --------------------------------
+
+$colors: (
+	black: #2C3E50,
+	white: #fff,
+	bright-blue: #409eff,
+	light-blue: #bfdceb,
+	bright-red: #ee1a2b,
+	alt-red: #dc3d39,
+	light-brown: #c0b1a3,
+	gold: #a59063,
+	brown: #4f3322,
+	gray: (
+		base: #707070,
+		light: #ebebeb,
+		dark: #898989,
+	),
+	teal: (
+		base: #139397,
+		light: #33afb3,
+		dark: #264d4e
+	)
+);
+
+
+// --------------------------------
+// setcolor() Function
+// --------------------------------
+
+/*
+ * Returns a color with an optional tone from the map
+ *
+ * @param {string}  $color_name     The base name of the color
+ * @param {tone}    ($tone|'base')  The tone of that color or 'base'
+ *
+ * @return {string} The matching color's value from the map
+ */
+
+@function setcolor($color_name, $tone: base) {
+	@if map-has-key($colors, $color_name) {
+		$map_color_name: map-get($colors, $color_name);
+		@if (length($map_color_name) > 1) { /* This must be a map */
+			@return map-get($map_color_name, $tone);
+		} @else { /* It's just a single color */
+			@return $map_color_name;
+		}
+	} @else {
+		@warn "Couldn't find a color named `#{$color_name}`.";
+	}
+}

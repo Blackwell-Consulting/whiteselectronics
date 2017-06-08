@@ -1,0 +1,60 @@
+// ================================
+// Find A Dealer
+// ================================
+
+.wpsl-input label,
+#wpsl-radius label,
+#wpsl-category label {
+	width: rem(96px) !important;
+}
+
+.wpsl-phone,
+.wpsl-email,
+.wpsl-url {
+  display: block;
+}
+
+#wpsl-radius {
+  label {
+    white-space: nowrap;
+  }
+}
+
+#wpsl-stores {
+  span {
+    line-height: 1.2;
+  }
+  li:hover {
+    transition: background 0.3s ease-in-out;
+    background: #f4f3f3;
+  }
+}
+
+.gm-style-iw > div > div {
+  height: rem(155px);
+}
+
+.premium-dealer {
+	display: block;
+	margin-bottom: rem(12px);
+	margin-left: rem(30px);
+	font-weight: 600;
+	font-size: rem(10px);
+	color: #996735;
+	text-transform: uppercase;
+	&:before {
+		@extend .sprite-whites;
+    @include sprite($diamond);
+    position: absolute;
+    left: rem(-30px);
+    top: rem(3px);
+    display: inline-block;
+		content: "";
+	}
+  .gm-style-iw & {
+    margin-top: rem(3px);
+    &:before {
+      top: rem(-2px);
+    }
+  }
+}

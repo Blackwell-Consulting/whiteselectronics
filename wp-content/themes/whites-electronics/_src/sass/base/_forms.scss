@@ -1,0 +1,177 @@
+// ================================
+// Form Elements
+// ================================
+
+// --------------------------------
+// Default Styles
+// --------------------------------
+
+input,
+textarea,
+select {
+	outline: none;
+	border-radius: 0;
+	border: rem(1px) solid #eee;
+	padding: rem(5px 10px);
+	margin: 0;
+	width: 100%;
+	@include setfont(default);
+	font-size: rem(20px);
+}
+
+// Unique styles that just apply to input/textarea/label
+input,
+textarea,
+label {
+	color: black;
+}
+
+// Add the correct appearance, but also adjust the height to fit with our input fields.
+// This only matters for apple devices (height)
+select {
+	background: #fff;
+	height: rem(40px);
+	padding: rem(5px 10px);
+}
+
+// Reset Search Input
+input[type=search] {
+	-webkit-appearance: textfield;
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-decoration,
+	&::-webkit-search-results-button,
+	&::-webkit-search-results-decoration {
+		-webkit-appearance: none;
+	}
+}
+
+// Make sure we are not adding the select height to multi select
+select[multiple] {
+	height: auto;
+}
+
+// Styles relevant to checkboxes
+input[type="checkbox"] {
+	vertical-align: bottom;
+}
+
+// Styles relevant to radio buttons
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+
+// Label specific styling
+label {
+	font-weight: 400;
+}
+
+// Focus specific styling
+input:focus,
+textarea:focus {
+	outline: none;
+	border-color: #eee;
+	color: #000;
+}
+
+// Submit input specific styling
+input[type="submit"] {
+	@extend %naked-button;
+	border-radius: 0;
+	height: auto;
+}
+
+// --------------------------------
+// Placeholders
+// --------------------------------
+
+.placeholder {
+	color: setcolor(gray);
+}
+
+input,
+textarea {
+	@include placeholder() {
+		color: #D6D6D6;
+		letter-spacing: 2px;
+	}
+}
+
+input:focus,
+textarea:focus {
+	@include placeholder() {
+		color: #D6D6D6;
+	}
+}
+
+
+// --------------------------------
+// Browser Specific
+// --------------------------------
+
+// Remove extra spacing that Firefox adds to buttons
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0
+}
+
+// Remove spinner from type="number"
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+// Reset all styling for input and textarea, handy for mobile devices
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="button"],
+input[type="submit"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+// --------------------------------
+// Gravity Forms
+// --------------------------------
+
+.gform_wrapper {
+	@include setfont(default, 400);
+
+	.gfield_label {
+		font-size: rem(20px);
+		font-weight: 400 !important;
+		color: black;
+	}
+	.gform_button {
+		display: inline-block;
+	    width: auto;
+	    background: setcolor(bright-blue);
+	    padding: rem(14px 80px);
+	    @include setfont(default,700);
+	    font-size: rem(17.5px);
+	    text-transform: uppercase;
+	    letter-spacing: 1px;
+	    @include mq(small) {
+	      padding-right: rem(100px);
+	      padding-left: rem(100px);
+	    }
+	    &:hover,
+	    &:focus {
+	      color: white;
+	    }
+	}
+	.ginput_container {
+		margin: 0;
+	}
+	.gform_footer {
+		text-align: center;
+	}
+}

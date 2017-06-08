@@ -1,0 +1,63 @@
+# Compiled Source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+*.7z
+*.dmg
+*.iso
+*.jar
+
+# Logs & Databases #
+######################
+*.log
+*.sql
+*.sqlite
+*.sublime-*
+
+# OS Generated Files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Sass #
+########
+.sass-cache
+
+# Wordpress #
+#############
+.htaccess
+sitemap.xml
+sitemap.xml.gz
+wp-config.php
+wp-config.local
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+wp-content/timthumb-cache/
+wp-content/themes/twenty*
+
+# Build Folders #
+#################
+node_modules
+
+# PHPStorm #
+############
+.idea

@@ -1,0 +1,48 @@
+{
+  "name": "wordpress-starter-theme",
+  "version": "1.0.0",
+  "description": "A starter bare-bones Wordpress theme framework.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/40Digits/wordpress-starter-theme"
+  },
+  "author": "40Digits",
+  "contributors": [
+    {
+      "name": "Besim Huskic",
+      "email": "besim@40digits.com"
+    },
+    {
+      "name": "Chad Watson",
+      "email": "chad@40digits.com"
+    },
+    {
+      "name": "CK Hicks",
+      "email": "ck@40digits.com"
+    },
+    {
+      "name": "Grant Holle",
+      "email": "grant@40digits.com"
+    }
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "browserify-ejs": "0.0.2",
+    "browserify-shim": "^3.8.11",
+    "gulp": "^3.9.0",
+    "gulp-eta": "^0.4.7"
+  },
+  "browser": {
+    "waitFor": "./_src/js/lib/waitFor.js"
+  },
+  "browserify-shim": {
+    "jquery": "global:$"
+  },
+  "dependencies": {
+    "sassqwatch": "^0.7.4"
+  }
+}

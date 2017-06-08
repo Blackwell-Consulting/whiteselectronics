@@ -1,0 +1,253 @@
+// ================================
+// Footer
+// ================================
+
+footer {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.detector-selector-banner {
+  @include cf;
+  padding: rem(45px 0 105px);
+  background-color: setcolor(bright-blue);
+  color: white;
+  text-align: center;
+  @include mq(medium) {
+    padding: rem(44px 0);
+  }
+  h2 {
+    display: block;
+    margin-bottom: rem(41px);
+    @include setfont(font-one, 400);
+    font-size: rem(25px);
+    font-weight: 400;
+    text-align: center;
+    @include mq(medium) {
+      display: inline-block;
+      padding-right: rem(30px);
+      max-width: rem(360px);
+      font-size: rem(30px);
+      text-align: left;
+    }
+  }
+  .button {
+    display: inline-block;
+    margin-top: rem(61px);
+    @include mq(medium) {
+      top: rem(-16px);
+    }
+    &:before {
+      display: block;
+      position: absolute;
+      top: rem(-87px);
+      left: rem(19px);
+      height: rem(227px);
+      width: rem(227px);
+      background: url('assets/images/radius-design.png') no-repeat;
+      background-size: 100%;
+      opacity: .5;
+      content: "";
+      @include mq(mini) {
+        left: rem(19px);
+      }
+      @include mq(small) {
+        left: rem(28px);
+      }
+      @include mq(medium) {
+        left: rem(31px);
+      }
+    }
+  }
+  a {
+    display: inline-block;
+    padding: rem(14px 45px);
+    background-color: white;
+    color: setcolor(gray);
+    font-size: rem(15px);
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 1;
+    text-transform: uppercase;
+    @include mq(small) {
+      font-size: rem(17.5px);
+    }
+    &:before {
+      position: absolute;
+      top: rem(-18%);
+      left: rem(-3%);
+      height: 136%;
+      width: 106%;
+      border: 2px solid white;
+      content: "";
+    }
+    &:hover {
+      color: setcolor(bright-blue);
+    }
+  }
+  .page-template-detector-selector & {
+    display: none;
+  }
+}
+
+footer {
+	padding: rem(30px 0 20px);
+  @include mq(large) {
+    padding: rem(83px 0 60px);
+  }
+  nav {
+    @include cf;
+    @include mq(large) {
+      margin-bottom: rem(120px);
+    }
+    div {
+      margin-bottom: rem(50px);
+      ul {
+        @extend %naked-list;
+        display: inline-block;
+        li:last-child a {
+          margin-bottom: 0;
+        }
+        a {
+          display: inline-block;
+          margin-bottom: rem(8px);
+          font-size: rem(30px);
+          @include setfont(font-one, 400);
+          @include mq(large) {
+            font-size: rem(20px);
+          }
+        }
+      }
+    }
+  }
+  h2 {
+    font-size: rem(17.5px);
+    text-transform: uppercase;
+    padding-bottom: rem(14px);
+    letter-spacing: 3.6px;
+    @include mq(large) {
+      padding-bottom: rem(20px);
+    }
+  }
+  .reorder {
+    @include mq(large) {
+      float: right;
+      width: 25%;
+      margin-bottom: 0;
+    }
+  }
+  .call-us {
+    a,
+    .tel {
+      display: inline-block;
+      margin: rem(15px 0 2px);
+      font-size: rem(30px);
+      @include setfont(font-one, 400);
+      @include mq(large) {
+        display: none;
+        margin-top: 0;
+        font-size: rem(22.5px);
+      }
+    }
+    .tel {
+      display: none;
+      @include mq(large) {
+        display: block;
+      }
+    }
+    p {
+      font-size: rem(22.5px);
+      @include setfont(font-one, 400);
+      span {
+        display: block;
+      }
+    }
+  }
+  .about-whites,
+  .more-info,
+  .where-to-buy {
+    @include mq(large) {
+      display: inline-block;
+      float: left;
+      width: 25%;
+    }
+  }
+  .more-nav {
+    display: none;
+    @include mq(large) {
+      display: block;
+    }
+    &.show {
+      display: block;
+    }
+  }
+  #show-more {
+    @include mq(large) {
+      display: none;
+    }
+    span {
+      display: inline-block;
+      cursor: pointer;
+      user-select: none;
+      &:after {
+        @extend .sprite-whites;
+        @include sprite($dropdown-arrow);
+        display: inline-block;
+        height: rem(10px);
+        width: rem(17px);
+        margin-left: rem(8px);
+        content: "";
+      }
+    }
+    &.show span:after {
+      transform: scaleY(-1);
+      -ms-transform: scaleY(-1);
+    }
+  }
+  .logo {
+    text-align: center;
+    margin: rem(20px 0 80px);
+    text-transform: uppercase;
+    @include mq(large) {
+      margin-bottom: rem(44px);
+    }
+    &:before {
+      position: absolute;
+      top: rem(-39px);
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      @extend .sprite-whites;
+      @include sprite($logo-footer);
+      content: "";
+    }
+    h2 {
+      font-size: rem(23.5px);
+      padding-bottom: rem(1px);
+      letter-spacing: 1px;
+    }
+    span {
+      font-size: rem(37.5px);
+      @include setfont(font-two, 400);
+      letter-spacing: 3px;
+    }
+  }
+  .copyright {
+    font-size: rem(14px);
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    span {
+      display: block;
+      @include mq(large) {
+        display: inline-block;
+        margin-right: rem(30px);
+      }
+    }
+    a {
+      display: inline-block;
+      margin-top: rem(23px);
+    }
+  }
+}

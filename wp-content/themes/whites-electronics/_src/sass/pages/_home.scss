@@ -1,0 +1,641 @@
+// ================================
+// Home
+// ================================
+
+.hero-home {
+  overflow: hidden;
+  padding-right: rem(25px);
+  padding-left: rem(25px);
+  @include mq(large) {
+    max-height: rem(780px);
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .intro {
+    display: inline-block;
+    position: absolute;
+    top: rem(90px);
+    left: 0;
+    right: 0;
+    text-align: center;
+    max-width: rem(270px);
+    width: 100%;
+    margin: 0 auto;
+    @include mq(medium) {
+      top: rem(100px);
+      max-width: 100%;
+    }
+    @include mq(large) {
+      top: rem(130px);
+    }
+    h1 {
+    display: inline-block;
+    font-size: rem(28px);
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+    line-height: 1.2;
+    @include mq(medium) {
+      font-size: rem(20px);
+    }
+      span {
+        &:first-child {
+          display: inline;
+          font-size: rem(22px);
+          font-weight: 700;
+          letter-spacing: 1.3px;
+          @include mq(small) {
+            margin-bottom: rem(6px);
+          }
+          @include mq(medium) {
+            display: block;
+            font-size: rem(20px);
+            font-weight: 700;
+            letter-spacing: 1px;
+          }
+          @include mq(xlarge) {
+            font-size: rem(20px);
+          }
+          span {
+            display: block;
+            margin-bottom: rem(2px);
+            @include setfont(font-two, 400);
+            font-size: rem(33px);
+            font-weight: 400;
+            @include mq(medium) {
+              display: inline-block;
+              margin-bottom: 0;
+              font-size: rem(20px);
+              @include setfont(default, 700);
+            }
+          }
+        }
+        &:nth-child(2) {
+          display: inline-block;
+          font-size: rem(22px);
+          font-weight: 700;
+          @include mq(medium) {
+            font-size: rem(33px);
+            font-weight: 400;
+            @include setfont(font-two, 400);
+          }
+        }
+        &:last-child {
+          display: block;
+          margin-top: rem(6px);
+          font-size: rem(33px);
+          letter-spacing: 1.3px;
+          @include setfont(font-two, 400);
+          @include mq(medium) {
+            display: inline;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+  .image {
+    height: rem(350px);
+    margin-top: rem(414px);
+    margin-bottom: rem(15px);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include mq(medium) {
+      margin-top: rem(285px);
+    }
+    @include mq(large) {
+      top: rem(60px);
+      height: rem(780px);
+      margin-top: 0;
+      background-position: initial;
+    }
+  }
+  .text-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    @include mq(large) {
+      top: auto;
+      left: auto;
+      bottom: rem(190px);
+      right: rem(115px);
+      width: auto;
+      color: black;
+      background: transparentize(white,.7);
+      transition: box-shadow $timing-fast ease-in-out;
+      &:hover {
+        box-shadow:0 0 10px rgba(0, 0, 0, 0.3);
+      }
+    }
+    &.alt-layout {
+      top: auto;
+      left: rem(25px);
+      right: rem(25px);
+      bottom: rem(14px);
+      padding: 0;
+      margin: 0;
+      @include mq(large) {
+        max-width: 60%;
+        left: auto;
+        bottom: rem(120px);
+        right: rem(85px);
+        padding: rem(10px);
+      }
+      @include mq(xlarge) {
+        max-width: 50%;
+        right: rem(115px);
+        bottom: rem(120px);
+      }
+      &:hover {
+        box-shadow: none;
+      }
+      p {
+        padding-right: rem(10px);
+        padding-left: rem(10px);
+        font-weight: 700;
+        font-size: rem(18px);
+        letter-spacing: 1px;
+        line-height: 1.4;
+        @include mq(medium) {
+          font-size: rem(22px);
+        }
+      }
+      .text {
+        text-align: center;
+        @include mq(max-medium) {
+          right: 50px;
+          padding: rem(10px 20px);
+          text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.92);
+        }
+      }
+      h1 {
+        position: static;
+        line-height: 1.3;
+        @include setfont(font-one, 400);
+        font-style: italic;
+        font-size: rem(18px);
+        border: none;
+        padding: 0;
+        @include mq(large) {
+          font-size: rem(26px);
+        }
+      }
+      h2 {
+        font-size: rem(25px);
+        letter-spacing: 6px;
+        @include mq(medium) {
+          font-size: rem(35px);
+        }
+        @include mq(large) {
+          font-size: rem(45px);
+        }
+      }
+      p {
+        @include setfont(font-two, 400);
+        font-size: rem(17.5px);
+        font-weight: 700;
+        padding: rem(5px 0);
+        color: setcolor(light-blue);
+        letter-spacing: 3px;
+        @include mq(medium) {
+          font-size: rem(19px);
+        }
+        @include mq(large) {
+          font-size: rem(21px);
+          padding: rem(15px 0);
+        }
+      }
+      hr {
+        border-top: 2px solid white;
+        border-bottom: none;
+        width: 60%;
+        margin: rem(20px auto);
+        @include mq(large) {
+          margin-top: rem(30px);
+          margin-bottom: rem(30px);
+        }
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+    }
+    .text {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 20px;
+      margin: 0 auto;
+      font-size: rem(22px);
+      line-height: 1.3;
+      letter-spacing: 5px;
+      color: white;
+      @include mq(large) {
+        position: static;
+        color: black;
+      }
+      a {
+        display: inline-block;
+        width: 100%;
+        @include mq(large) {
+          padding: rem(10px);
+        }
+        &:before {
+          position: absolute;
+          top: rem(-50px);
+          left: 0;
+          height: rem(50px);
+          width: 100%;
+          content: "";
+        }
+      }
+    }
+    h2,
+    h3 {
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.92);
+    }
+    h1 {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: rem(-403px);
+      margin-right: auto;
+      margin-left: auto;
+      padding: rem(0 80px 10px);
+      margin-bottom: rem(25px);
+      font-size: rem(20px);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      @include setfont(font-two, 700);
+      @include mq(large) {
+        position: static;
+        left: auto;
+        right: auto;
+        top: auto;
+        margin: rem(10px);
+        border-bottom: 1px solid black;
+        font-size: rem(17.5px);
+      }
+    }
+    h2 {
+      text-transform: uppercase;
+      color: white;
+      @include mq(large) {
+        position: static;
+        bottom: auto;
+        color: black;
+        font-size: rem(35px);
+        text-shadow: none;
+      }
+    }
+    h3 {
+      color: white;
+      margin-top: rem(10px);
+      font-size: rem(46px);
+      @include setfont(font-one, 400);
+      font-style: italic;
+      letter-spacing: 2px;
+      @include mq(large) {
+        color: black;
+        text-shadow: none;
+      }
+    }
+  }
+}
+
+.blue-bg-round {
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 180%;
+  padding: rem(525px 0 20px);
+  margin-top: rem(-188px);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8cc5ff+51,409eff+84 */
+  background: #8cc5ff; /* Old browsers */
+  background: -moz-linear-gradient(top,  #8cc5ff 51%, #409eff 84%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #8cc5ff 51%,#409eff 84%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #8cc5ff 51%,#409eff 84%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8cc5ff', endColorstr='#409eff',GradientType=0 ); /* IE6-9 */
+  border-radius: 0 0 110% 110%;
+  @include mq(medium) {
+    left: -15%;
+    width: 130%;
+    padding-top: rem(480px);
+    margin-top: rem(-280px);
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8cc5ff+73,409eff+100 */
+    background: #8cc5ff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #8cc5ff 73%, #409eff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #8cc5ff 73%,#409eff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #8cc5ff 73%,#409eff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8cc5ff', endColorstr='#409eff',GradientType=0 ); /* IE6-9 */
+  }
+  @include mq(large) {
+    padding-top: rem(490px);
+  }
+  @include mq(xlarge) {
+    padding-top: rem(480px);
+  }
+  h1 {
+    display: inline-block;
+    font-size: rem(20px);
+    span {
+      display: block;
+      font-weight: 400;
+      @include mq(large) {
+        display: block;
+        font-weight: unset;
+      }
+    }
+  }
+  p {
+    font-size: rem(30px);
+    padding-bottom: rem(10px);
+    span {
+      &:first-child {
+        display: inline-block;
+        font-weight: bold;
+        font-size: rem(20px);
+        @include mq(large) {
+          font-weight: unset;
+          font-size: inherit;
+        }
+      }
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+}
+
+.tile-grid {
+  @include cf;
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  @include mq(medium) {
+    height: rem(726px);
+  }
+  @include mq(large) {
+    height: rem(806px);
+  }
+  .tile {
+    height: rem(415px);
+    background-size: cover;
+    @include mq(medium) {
+      float: left;
+      height: 60%;
+      width: 50%;
+    }
+    &:first-child {
+      height: auto;
+      padding: rem(0 20px);
+      @include mq(medium) {
+        height: 100%;
+        border-right: 2px solid white;
+      }
+      a {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+      .custom-content {
+        display: inline-block;
+        width: 100%;
+        padding: rem(30px 0);
+        color: white;
+        text-align: center;
+        @include mq(medium) {
+          display: block;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          padding: 0;
+        }
+        h1,
+        h2,
+        p,
+        hr {
+          text-shadow: 2px 2px 25px rgba(0, 0, 0, 0.92),
+                       2px 2px 2px rgba(0, 0, 0, 0.92);
+        }
+        h1 {
+          @include setfont(font-one, 400);
+          font-style: italic;
+          font-size: rem(30px);
+          @include mq(medium) {
+            font-size: rem(40px);
+          }
+          @include mq(large) {
+            font-size: rem(50px);
+          }
+        }
+        h2 {
+          font-size: rem(25px);
+          letter-spacing: 6px;
+          @include mq(medium) {
+            font-size: rem(35px);
+          }
+          @include mq(large) {
+            font-size: rem(45px);
+          }
+        }
+        p {
+          @include setfont(font-two, 400);
+          font-size: rem(17.5px);
+          font-weight: 700;
+          padding: rem(5px 0);
+          color: setcolor(light-blue);
+          letter-spacing: 3px;
+          @include mq(medium) {
+            font-size: rem(19px);
+          }
+          @include mq(large) {
+            font-size: rem(21px);
+            padding: rem(15px 0);
+          }
+        }
+        hr {
+          border-top: 2px solid white;
+          border-bottom: none;
+          width: 60%;
+          margin: rem(20px auto);
+          @include mq(large) {
+            margin-top: rem(30px);
+            margin-bottom: rem(30px);
+          }
+          &:first-of-type {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    &.latest-finds {
+      text-align: center;
+      h2 {
+        padding-top: rem(30px);
+        @include setfont(font-two, 700);
+        font-size: rem(27.5px);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        @include mq(medium) {
+          padding-top: rem(38px);
+          font-size: rem(20px);
+        }
+        @include mq(large) {
+          padding-top: rem(48px);
+        }
+      }
+      .slider {
+        margin: rem(70px auto 0);
+        height: rem(213px) !important;
+        width: rem(213px) !important;
+        background: white;
+        @include mq(medium) {
+          height: rem(247.5px) !important;
+          width: rem(247.5px) !important;
+          margin-top: rem(45px);
+        }
+        @include mq(large) {
+          margin-top: rem(70px);
+        }
+        &:before {
+          position: absolute;
+          top: rem(-4px);
+          left: rem(-4px);
+          height: rem(221px);
+          width: rem(221px);
+          border: 4px solid white;
+          box-shadow: 0 0 38px rgba(0, 0, 0, 0.5),
+                  0 0 38px rgba(0, 0, 0, 0.5);
+          content: "";
+          z-index: 0;
+          @include mq(medium) {
+            height: rem(256px);
+            width: rem(256px);
+          }
+        }
+      }
+      .slide {
+        background: setcolor(bright-blue);
+        background-size: cover;
+        height: rem(213px);
+        width: rem(213px);
+        @include mq(medium) {
+          height: rem(247.5px);
+          width: rem(247.5px)
+        }
+        a {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+    &.how-to {
+      .slider {
+        @extend %abs-center-vertical;
+        margin: rem(0 auto);
+        height: rem(300px) !important;
+        width: rem(288px) !important;
+        @include mq(medium) {
+          height: rem(228px) !important;
+          width: rem(300px) !important;
+        }
+        @include mq(xlarge) {
+          width: rem(450px) !important;
+        }
+      }
+      .slide {
+        background: transparent;
+        height: rem(300px);
+        width: rem(288px);
+        padding: rem(0 20px);
+        @include mq(medium) {
+          height: rem(228px);
+          width: rem(400px);
+        }
+        @include mq(xlarge) {
+          width: rem(450px);
+        }
+        .container {
+          height: 100%;
+          width: 100%;
+          padding-top: rem(20px);
+          padding-left: rem(17.5px);
+          background: url('assets/images/how-to-bg.jpg');
+          border: 2px solid setcolor(light-brown);
+          overflow: hidden;
+          @include mq(large) {
+            padding-left: rem(37.5px);
+          }
+        }
+        .tile-link {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 100%;
+          width: 100%;
+          z-index: 1;
+        }
+        .title {
+          height: rem(206px);
+          padding-right: rem(10px);
+          @include mq(medium) {
+            height: rem(134px);
+          }
+        }
+        .icon {
+          @extend .sprite-whites;
+          @include sprite($gold);
+          display: inline-block;
+          margin-left: rem(20px);
+          top: rem(8px);
+        }
+        h2 {
+          display: inline-block;
+          color: setcolor(gold);
+          font-size: rem(20px);
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          @include mq(large) {
+            font-size: rem(22px);
+          }
+        }
+        h3 {
+          @extend %abs-center-vertical;
+          @include setfont(font-one, 400);
+          font-size: rem(47.5px);
+          color: setcolor(brown);
+          line-height: 1.2;
+          letter-spacing: -1px;
+          @include mq(medium) {
+            font-size: rem(37.5px);
+          }
+          @include mq(large) {
+            font-size: rem(47.5px);
+          }
+        }
+        hr {
+          margin-top: rem(20px);
+          border-top: 1px solid setcolor(light-brown);
+          border-bottom: none;
+        }
+      }
+      @include mq(medium) {
+        height: 40%;
+        border-top: 2px solid white;
+      }
+    }
+  }
+}

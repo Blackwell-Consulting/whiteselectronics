@@ -1,0 +1,357 @@
+// ================================
+// WooCommerce
+// ================================
+
+.product-wrapper {
+  @include mq(medium) {
+    padding-right: rem(50px);
+    padding-left: rem(50px);
+  }
+  @include mq(large) {
+    padding-right: rem(100px);
+    padding-left: rem(100px);
+  }
+  @include mq(xlarge) {
+    padding-right: rem(150px);
+    padding-left: rem(150px);
+  }
+}
+
+.star-rating {
+  float: left;
+  margin-top: rem(4px);
+  overflow: hidden;
+  position: relative;
+  height: 1em;
+  line-height: 1;
+  font-size: 1em;
+  width: 5.4em;
+  font-family: 'star';
+  @include mq(large) {
+    float: right;
+    margin-top: 0;
+  }
+  .reviews-block & {
+    float: right !important;
+    font-size: 18px;
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+    span:before {
+      font-size: 18.6px;
+      padding-left: 0;
+      @include mq(large) {
+        color: white;
+      }
+    }
+  }
+  .meta-info & {
+    font-size: 15px;
+    left: rem(-7.25px);
+    span:before {
+      font-size: 15.3px;
+    }
+  }
+
+  span {
+    overflow: hidden;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-top: 1.5em;
+  }
+
+  span:before {
+    content: "\53\53\53\53\53";
+    top: 0;
+    position: absolute;
+    left: -1px;
+    padding-left: 0;
+    font-family: 'star';
+    font-size: 16px;
+    color: setcolor(gold);
+  }
+}
+
+.woocommerce-product-rating {
+  @include cf;
+  line-height: 2;
+  display: block;
+
+  .reviews-block & {
+    margin-bottom: rem(10px);
+    display: inline-block;
+    float: right;
+  }
+
+  .star-rating {
+    margin: .5em 4px 0 0;
+    float: left;
+  }
+}
+
+.products {
+  .star-rating {
+    display: block;
+    margin: 0 0 .5em;
+    float: none;
+  }
+}
+
+.hreview-aggregate {
+  .star-rating {
+    margin: 10px 0 0 0;
+  }
+}
+
+#review_form {
+  #respond {
+    @include cf;
+    position: static;
+    margin: 0;
+    width: auto;
+    padding: 0 0 0;
+    background: transparent none;
+    border: 0;
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    .form-submit {
+      input {
+        left: auto;
+      }
+    }
+
+    textarea {
+      box-sizing: border-box;
+      width: 100%;
+      color: black;
+      font-size: rem(17.5px);
+    }
+  }
+}
+
+p.stars {
+  position: relative;
+  font-size: 1em;
+
+  a {
+    display: inline-block;
+    font-weight: 700;
+    margin-right: 0.5em;
+    text-indent: -9999px;
+    position: relative;
+    border-bottom: 0 !important;
+    outline: 0;
+    color: setcolor(gold);
+    @include mq(medium) {
+      margin-right: 1rem;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    &.star-1,
+    &.star-2,
+    &.star-3,
+    &.star-4,
+    &.star-5 {
+      border-right: 1px solid #ccc;
+
+      &:after {
+        font-family: "WooCommerce";
+        text-indent: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+    }
+
+    &.star-1 {
+      width: 1.5em;
+      @include mq(medium) {
+        width: 2em;
+      }
+
+      &:after {
+        content: "\e021";
+      }
+
+      &:hover:after,
+      &.active:after {
+        content: "\e020"
+      }
+    }
+
+    &.star-2 {
+      width: 2.5em;
+      @include mq(medium) {
+        width: 3em;
+      }
+
+      &:after {
+        content: "\e021\e021";
+      }
+
+      &:hover:after,
+      &.active:after {
+        content: "\e020\e020"
+      }
+    }
+
+    &.star-3 {
+      width: 3.5em;
+      @include mq(medium) {
+        width: 4em;
+      }
+
+      &:after {
+        content: "\e021\e021\e021";
+      }
+
+      &:hover:after,
+      &.active:after {
+        content: "\e020\e020\e020"
+      }
+    }
+
+    &.star-4 {
+      width: 4.5em;
+      @include mq(medium) {
+        width: 5em;
+      }
+
+      &:after {
+        content: "\e021\e021\e021\e021";
+      }
+
+      &:hover:after,
+      &.active:after {
+        content: "\e020\e020\e020\e020"
+      }
+    }
+
+    &.star-5 {
+      border: 0;
+      width: 5.5em;
+      @include mq(medium) {
+        width: 6em;
+      }
+
+      &:after {
+        content: "\e021\e021\e021\e021\e021";
+      }
+
+      &:hover:after,
+      &.active:after {
+        content: "\e020\e020\e020\e020\e020"
+      }
+    }
+  }
+}
+
+.woocommerce-message,
+.woocommerce-error,
+.woocommerce-info,
+.success-msg,
+.gform_confirmation_wrapper  {
+  padding: 1em 2em !important;
+  margin: 0 0 2em !important;
+  position: relative;
+  background-color: setcolor(gray,light);
+  color: black;
+  border-top: 3px solid setcolor(bright-blue);
+  list-style: none outside !important;
+  @include cf;
+  @include setfont(default);
+  width: auto;
+  word-wrap: break-word;
+
+  &:before {
+    font-family: "WooCommerce";
+    content: "\e028";
+    display: inline-block;
+    position: absolute;
+    top: 1em;
+    left: 1.5em;
+  }
+
+  .button {
+    float: right;
+  }
+
+  li {
+    list-style: none outside !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  strong {
+    font-size: rem(inherit);
+    margin: rem(16px 0 6px);
+  }
+}
+
+.woocommerce-message,
+.woocommerce-info,
+.success-msg {
+  border-top-color: setcolor(bright-blue);
+}
+
+.woocommerce-error {
+  border-top-color: setcolor(bright-red);
+
+  &:before {
+    content: "\e016";
+    color: setcolor(bright-red);
+  }
+}
+
+input[type="submit"].login-button,
+input[type="submit"].register-button,
+input[type="submit"].save-address-button,
+input[type="submit"].reset-password-button,
+.submit-a-story button.submit  {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: setcolor(bright-blue);
+  padding: rem(14px 0);
+  margin: 20px auto 0;
+  @include setfont(default,700);
+  font-size: rem(17.5px);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color $timing-fast ease-in-out;
+  @include mq(small) {
+    width: auto;
+    padding-right: rem(100px);
+    padding-left: rem(100px);
+  }
+  &:hover,
+  &:focus {
+    color: white;
+  }
+}
+
+.submit-a-story button.submit {
+  @extend %naked-button;
+}
+
+.clear {
+  z-index: -10;
+}
+
+.select2-chosen {
+  line-height: 1em;
+  padding-top: rem(4px);
+  
+  @include mq(large) {
+    line-height: 1em;
+    padding-top: rem(2px);
+  }
+}

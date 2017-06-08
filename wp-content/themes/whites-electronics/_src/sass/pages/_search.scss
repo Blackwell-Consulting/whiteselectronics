@@ -1,0 +1,122 @@
+// ================================
+// Repair Status
+// ================================
+
+.search-results main {
+  .content {
+  	.search-title {
+  		@include setfont('default',400);
+  		color: setcolor(gray,dark);
+  		font-size: rem(20px);
+  		text-transform: uppercase;
+  	}
+  }
+  .text-wrapper {
+    padding-bottom: 0;
+  }
+  .wrapper {
+    padding-top: rem(10px);
+    padding-bottom: rem(120px);
+    max-width: rem(602px);
+    margin: 0 auto;
+    @include mq(medium) {
+      padding-top: rem(60px);
+    }
+    @include setfont(font-one, 400);
+    a {
+      color: setcolor(bright-blue);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  	ul {
+  		@extend %naked-list;
+  		margin-left: 0;
+  	}
+  	li {
+  		@include cf;
+  		margin-left: 0;
+      margin-bottom: rem(20px);
+      padding-bottom: rem(20px);
+      border-bottom: 1px solid black;
+  	}
+    h3 {
+      font-weight: 700;
+      font-size: rem(20px);
+      margin-bottom: rem(10px);
+      @include mq(medium) {
+        font-size: rem(26px);
+      }
+      a {
+        font-weight: bold !important;
+        font-size: rem(20px) !important;
+        @include mq(medium) {
+          font-size: rem(26px) !important;
+        }
+      }
+    }
+  	.image {
+  		float: left;
+  		width: 20%;
+      padding-right: rem(20px);
+      img {
+        margin: 0;
+      }
+  	}
+  	.excerpt {
+  		float: left;
+      font-size: rem(18px);
+      line-height: 1.3;
+  		width: 80%;
+      text-align: left;
+  	}
+    .readmore {
+      margin-top: rem(10px);
+      font-size: rem(18px);
+    }
+    strong a {
+      display: block;
+      margin-top: rem(10px);
+      font-weight: normal;
+      font-size: rem(18px);
+    }
+    .posts-nav {
+      @include cf;
+      display: inline-block;
+      a,
+      span {
+        display: inline-block;
+        float: left;
+        width: rem(30px);
+        padding: rem(8px 0);
+        margin-top: rem(38px);
+        font-size: rem(16px);
+        font-weight: 600;
+        @include setfont(default);
+        border-top: 1px solid setcolor(gray,light);
+        border-right: 1px solid setcolor(gray,light);
+        border-bottom: 1px solid setcolor(gray,light);
+        @include mq(large) {
+          margin-top: rem(48px);
+        }
+      }
+      a {
+        color: black;
+        transition: color 0.3s ease-in-out;
+        text-decoration: none;
+        &:hover {
+          color: setcolor(bright-blue);
+        }
+      }
+      .page-number:first-child {
+        border-left: 1px solid setcolor(gray,light);
+      }
+      .current {
+        display: block;
+        width: rem(30px);
+        background: setcolor(gray,light);
+        padding: rem(8px 0);
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.detector-selector {
+
+  .results-container {
+    display: none;
+
+    .personality-type {
+      display: none;
+
+      &.selected {
+        display: block;
+      }
+    }
+
+    .detector-selector-result {
+      display: none;
+
+      &.selected {
+        display: inline-block;
+      }
+    }
+
+    .no-detector-results {
+      clear: both;
+      display: none;
+      font-size: 1.8rem;
+    }
+  }
+
+  .detector-selector-form {
+    display: none;
+
+    .question {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

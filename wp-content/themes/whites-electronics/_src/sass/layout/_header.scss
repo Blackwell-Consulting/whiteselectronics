@@ -1,0 +1,341 @@
+// ================================
+// Header
+// ================================
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: rem(66px);
+  background: white;
+  z-index: 1001;
+  border-bottom: 2px solid black;
+  @include mq(large) {
+    height: rem(61px);
+    border-bottom: none;
+    box-shadow: 0px 20px 44px 31px rgba(255,255,255,1);
+  }
+
+  #nav-icon {
+    display: inline-block;
+    top: rem(-1px);
+    left: rem(-4px);
+    width: rem(30px);
+    height: rem(29.5px);
+    padding-left: 2.5px;
+    margin-top: rem(18px);
+    margin-bottom: rem(40px);
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    z-index: 100;
+    @include mq(large) {
+      display: none;
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      height: rem(2.5px);
+      width: 88%;
+      background-color: black;
+      opacity: 1;
+      transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transition: transform .15s ease-in-out, opacity .25s ease-in-out;
+      &:nth-child(1) {
+        top: rem(4px);
+        opacity: 1;
+      }
+      &:nth-child(2) {
+        top: rem(13.25px);
+      }
+      &:nth-child(3) {
+        top: rem(13.25px);
+      }
+      &:nth-child(4) {
+        top: rem(23px);
+        opacity: 1;
+      }
+      &.visually-hidden {
+        @extend %visually-hidden;
+      }
+    }
+    &.open {
+      span {
+        transition: transform .25s ease-in-out
+      }
+      span:nth-child(1) {
+        opacity: 0;
+        transition: opacity .10s ease-in-out;
+      }
+      span:nth-child(2) {
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+      }
+      span:nth-child(4) {
+        opacity: 0;
+        transition: opacity .10s ease-in-out;
+      }
+    }
+  }
+
+  .logo,
+  .shopping-cart-icon,
+  .search-icon {
+    &:before {
+      content: "";
+      @extend .sprite-whites;
+    }
+    span {
+      @extend %visually-hidden;
+    }
+  }
+
+  .logo {
+    display: inline-block;
+    position: absolute;
+    top: rem(7px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: rem(81.5px);
+    transition: opacity 0.2s ease-in-out,
+                visibility 0.2s ease-in-out;
+    @include mq(large) {
+      position: relative;
+      float: left;
+      top: rem(6px);
+      width: 15%;
+    }
+    &:before {
+      @include sprite($logo-small);
+      width: rem(81.5px);
+      @include mq(large) {
+        @include sprite($logo);
+        margin: 0 auto;
+        width: rem(117px);
+      }
+    }
+  }
+
+  .nav-icons {
+    position: absolute;
+    top: 0;
+    right: rem(25px);
+    transition: opacity 0.2s ease-in-out,
+                visibility 0.2s ease-in-out;
+    @include mq(large) {
+      float: left;
+      position: static;
+      width: auto;
+      margin-top: rem(29px);
+    }
+    @include mq(xlarge) {
+      margin-top: rem(31px);
+    }
+  }
+
+  &.open .nav-icons {
+    opacity: 0;
+    visibility: 0;
+    @include mq(large) {
+      display: inline-block;
+    }
+  }
+
+  .shopping-cart {
+    display: none;
+    position: absolute;
+    right: 0;
+    margin-left: rem(17px);
+    top: rem(18px);
+    @include mq(large) {
+      position: static;
+      margin: rem(-2px 20px 0);
+    }
+    @include mq(xlarge) {
+      margin-left: rem(36px);
+      margin-right: rem(36px);
+    }
+  }
+
+  .shopping-cart-icon {
+    display: inline-block;
+    &:before {
+      @include sprite($shopping-cart);
+    }
+    &.has-items:before {
+      @include sprite($shopping-cart-filled);
+    }
+    .number-of-items {
+      position: absolute;
+      top: rem(8px);
+      left: rem(5px);
+      right: rem(1px);
+      @include setfont(default,700);
+      font-size: rem(11px);
+      color: white;
+      text-align: center;
+    }
+  }
+
+  .search-icon {
+    display: inline-block;
+    position: absolute;
+    top: rem(20px);
+    right: 0;
+    width: rem(22px);
+    height: auto;
+    cursor: pointer;
+    @include mq(large) {
+      position: relative;
+      top: rem(-1px);
+      right: auto;
+      margin-left: rem(30px);
+    }
+    @include mq(xlarge) {
+      margin-left: rem(50px);
+    }
+    &:before {
+      @include sprite($mag-glass);
+    }
+  }
+
+  #search-box {
+    @include cf;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    transition: right 0.2s ease-in-out;
+    z-index: 100;
+    @include mq(large) {
+      overflow: hidden;
+      position: absolute;
+      top: rem(80px);
+      right: rem(40px);
+      height: rem(30px);
+      width: rem(230px);
+      background: none;
+      text-align: left;
+    }
+    @include mq(xlarge) {
+      right: rem(50px);
+    }
+    input[type="submit"] {
+      display: none;
+    }
+    .search-content {
+      right: -100%;
+      transition: right $timing-fast ease-in-out;
+    }
+    label span {
+      display: none;
+    }
+    #close-search {
+      position: absolute;
+      top: rem(11px);
+      left: rem(14px);
+      padding: rem(6.5px 10px);
+      font-size: rem(13px);
+      cursor: pointer;
+      transition: color $timing-fast ease-in-out;
+      background: white;
+      @include mq(large) {
+        position: static;
+        float: right;
+        padding: rem(0 6px);
+        border: 1px solid setcolor(bright-blue);
+      }
+      &:hover {
+        color: setcolor(bright-blue);
+      }
+    }
+    &.show {
+      display: block;
+      right: 0;
+      @include mq(large) {
+        right: rem(40px);
+      }
+      @include mq(xlarge) {
+        right: rem(50px);
+      }
+      .search-content {
+        right: 0;
+      }
+    }
+  }
+  .search-field {
+    top: rem(75px);
+    width: rem(269px);
+    padding: rem(10px);
+    font-size: rem(16px);
+    @include setfont(font-two,700);
+    border: 1px solid setcolor(gray);
+    @include mq(large) {
+      float: left;
+      top: auto;
+      width: rem(192px);
+      padding: rem(3.5px 10px);
+      border: 1px solid setcolor(bright-blue);
+    }
+  }
+  .close-icon {
+    display: inline-block;
+    width: rem(30px);
+    height: rem(29.5px);
+    cursor: pointer;
+    z-index: 100;
+    @include mq(large) {
+      width: rem(17px);
+      height: rem(25px);
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      height: rem(3.5px);
+      width: 100%;
+      background-color: black;
+      opacity: 1;
+      transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transition: transform .15s ease-in-out, opacity .25s ease-in-out;
+      @include mq(large) {
+        height: rem(2px);
+      }
+      &:first-child {
+        top: rem(13.25px);
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+      }
+      &:last-child {
+        top: rem(13.25px);
+        transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+body.en header {
+  a.shopping-cart {
+    display: inline-block;
+  }
+  span.search-icon {
+    right: rem(52px);
+    @include mq(large) {
+      margin-left: 0;
+      right: auto;
+    }
+  }
+}

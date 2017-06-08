@@ -1,0 +1,38 @@
+// ================================
+// Repair Status
+// ================================
+
+.repair-status {
+	h2 {
+		@include mq(large) {
+			font-size: rem(24px);
+		}
+	}
+	span {
+		display: inline-block;
+		margin-bottom: rem(10px);
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+	.notes {
+		margin-top: rem(10px);
+	}
+
+	.success-msg {
+			text-transform: uppercase;
+	    font-size: rem(20px);
+	    @include setfont(default,700);
+	    @include mq(medium) {
+	      font-size: rem(22px);
+	    }
+	    span {
+		    text-transform: none;
+	      display: block;
+	      font-size: rem(16px);
+	      @include setfont(font-one);
+	      @include mq(medium) {
+	        font-size: rem(18px);
+	      }
+	    }
+  	}
+}

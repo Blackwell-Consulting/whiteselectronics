@@ -1,0 +1,74 @@
+// ================================
+// Hero
+// ================================
+
+.hero {
+	padding-top: rem(100px);
+  padding-bottom: rem(30px);
+	text-align: center;
+  @include mq(medium) {
+    height: rem(273px);
+    padding-top: rem(115px);
+    padding-bottom: 0;
+    color: white;
+  }
+  .finished & {
+    display: none;
+  }
+  .finished .results-container & {
+    display: block;
+  }
+  .bg-image {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: setcolor(bright-blue);
+    background-size: cover;
+    background-position: center top;
+    @include mq(medium) {
+      display: block;
+    }
+  }
+  .page-template-detector-selector.finished & .bg-image {
+    display: block;
+  }
+	h1 {
+    padding-left: rem(25px);
+    padding-right: rem(25px);
+		font-size: rem(30px);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    @include mq(medium) {
+      font-size: rem(33px);
+    }
+    &.no-subtitle {
+      @include mq(medium) {
+        padding-top: 25px;
+      }
+      @include mq(large) {
+        padding-top: rem(45px);
+      }
+    }
+	}
+  h2 {
+    display: none;
+    @include mq(medium) {
+      display: block;
+      padding-top: rem(20px);
+      @include setfont(font-one, 400);
+      font-size: rem(30px);
+      font-style: italic;
+      line-height: 1.1;
+    }
+  }
+  .page-template-detector-selector.finished & h1,
+  .page-template-detector-selector.finished & h2 {
+    color: white;
+  }
+  .detector-selector & h2 {
+    display: block;
+  }
+}

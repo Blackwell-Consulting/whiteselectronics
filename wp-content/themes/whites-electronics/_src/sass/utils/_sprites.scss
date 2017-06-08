@@ -1,0 +1,103 @@
+// ================================
+// Sprites
+// ================================
+
+// Individual variables
+$all-metal-audio: -305px -85px 42px 40px;
+$apps: -348px -79px 28px 40px;
+$arrow-left: -348px -119px 25px 42px;
+$arrow-right: -348px -161px 25px 42px;
+$audio-modulation: -348px -262px 22px 40px;
+$audio-plug: -117px -198px 52px 40px;
+$backlit: -270px -124px 35px 40px;
+$battery-life: -382px -0px 21px 40px;
+$battery: -0px -321px 22px 40px;
+$close-circle-small: -382px -40px 21px 21px;
+$close-circle: -22px -321px 29px 29px;
+$close: -382px -60px 19px 19px;
+$coil-configuration: -79px -281px 40px 40px;
+$coil: -0px -281px 40px 40px;
+$diamond: -256px -281px 27px 23px;
+$disc-audio: -158px -281px 43px 32px;
+$down-arrow: -382px -104px 17px 11px;
+$downloadable-updates: -59px -198px 58px 40px;
+$dropdown-arrow-blue-small: -382px -136px 11px 8px;
+$dropdown-arrow-blue: -382px -79px 20px 14px;
+$dropdown-arrow: -382px -92px 19px 12px;
+$facebook: -305px -43px 42px 42px;
+$frequency: -246px -240px 57px 27px;
+$generic: -217px -198px 49px 40px;
+$gold: -202px -124px 68px 41px;
+$height: -96px -240px 45px 40px;
+$included-accessories: -348px -0px 35px 40px;
+$instagram: -305px -0px 43px 43px;
+$length: -40px -281px 40px 40px;
+$logo-footer: -0px -0px 202px 124px;
+$logo-small: -119px -124px 84px 53px;
+$logo: -0px -124px 119px 74px;
+$mag-glass: -50px -321px 25px 25px;
+$minus: -382px -126px 11px 11px;
+$number-of-presets: -201px -281px 55px 25px;
+$optional-coils: -119px -281px 40px 40px;
+$pinpoint: -266px -198px 38px 40px;
+$play-large: -202px -0px 103px 103px;
+$play: -305px -243px 39px 39px;
+$plus: -382px -115px 11px 11px;
+$sat: -202px -103px 60px 18px;
+$shopping-cart-filled: -348px -232px 32px 30px;
+$shopping-cart: -348px -203px 32px 30px;
+$size: -305px -203px 40px 40px;
+$tone-id: -348px -40px 32px 40px;
+$twitter: -0px -240px 50px 41px;
+$type: -186px -240px 60px 28px;
+$unique-features: -141px -240px 45px 40px;
+$warranty: -50px -240px 47px 40px;
+$waterproof: -169px -198px 49px 40px;
+$weight: -305px -164px 42px 40px;
+$wireless-headphones: -305px -124px 42px 40px;
+$youtube: -0px -198px 59px 43px;
+
+// Mixins
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 3)
+}
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 4)
+}
+
+// Functions
+@function sprite-width($sprite) {
+  @return nth($sprite, 3);
+}
+@function sprite-height($sprite) {
+  @return nth($sprite, 4);
+}
+
+// Positioning
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 1);
+  $sprite-offset-y: nth($sprite, 2);
+  background-position: $sprite-offset-x $sprite-offset-y;
+}
+
+// Sprite Mixin
+@mixin sprite($sprite, $display: block) {
+  @include sprite-position($sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: $display;
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// @extend these to pull in the background image
+.sprite-whites {
+    background-image: url('public/assets/images/sprites/sprite-whites.png');
+  }
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 72dpi) {
+.sprite-whites {
+    background-image: url('public/assets/images/sprites/sprite-whites@2x.png');
+    background-size: 403px 360px;
+  }
+}
+

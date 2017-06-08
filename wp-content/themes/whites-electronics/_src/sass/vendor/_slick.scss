@@ -1,0 +1,264 @@
+.slick-slider {
+  position: relative;
+  display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.dragging {
+    cursor: pointer;
+    cursor: hand;
+  }
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  .slick-loading & {
+    visibility: hidden;
+  }
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  [dir="rtl"] & {
+    float: right;
+  }
+  img {
+    display: block;
+  }
+  &.slick-loading img {
+    display: none;
+  }
+
+  display: none;
+
+  &.dragging img {
+    pointer-events: none;
+  }
+
+  .slick-initialized & {
+    display: block;
+  }
+
+  .slick-loading & {
+    visibility: hidden;
+  }
+
+  .slick-vertical & {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+  }
+}
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+.slick-prev,
+.slick-next {
+  @extend .sprite-whites;
+}
+
+.slick-prev {
+  display: none !important;
+  @extend %naked-button;
+  position: absolute;
+  @extend %abs-center-vertical;
+  left: rem(-35px);
+  @include sprite($arrow-left);
+  z-index: 10;
+  @include mq(small) {
+    display: block !important;
+    left: rem(-60px);
+  }
+  .how-to & {
+    display: block !important;
+    left: rem(-25px);
+    @include mq(small) {
+      left: rem(-20px);
+    }
+  }
+  .single-find & {
+    display: block !important;
+    left: rem(-25px);
+    @include mq(small) {
+      left: rem(-40px);
+    }
+    @include mq(medium) {
+      left: rem(-50px);
+    }
+  }
+  .latest-finds & {
+    display: block !important;
+    left: rem(-36px);
+    @include mq(small) {
+      left: rem(-50px);
+    }
+  }
+}
+
+.slick-next {
+  display: none !important;
+  @extend %naked-button;
+  position: absolute;
+  @extend %abs-center-vertical;
+  right: rem(-36px);
+  @include sprite($arrow-right);
+  z-index: 10;
+  @include mq(small) {
+    display: block !important;
+    right: rem(-61px);
+  }
+  .how-to & {
+    display: block !important;
+    right: rem(-10px);
+    @include mq(small) {
+      right: rem(-31px);
+    }
+  }
+  .single-find & {
+    display: block !important;
+    right: rem(-26px);
+    @include mq(small) {
+      right: rem(-41px);
+    }
+    @include mq(medium) {
+      right: rem(-51px);
+    }
+  }
+  .latest-finds & {
+    display: block !important;
+    right: rem(-37px);
+    @include mq(small) {
+      right: rem(-51px);
+    }
+  }
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -45px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+  z-index: 1000;
+  .how-to & {
+    @include mq(medium) {
+      bottom: -30px;
+    }
+    @include mq(large) {
+      bottom: -40px;
+    }
+  }
+  .single-gallery & {
+    bottom: 5px;
+    @include mq(large) {
+      bottom: 35px;
+    }
+    li {
+      button:before {
+        height: 13px;
+        width: 13px;
+        border: 2px solid white;
+      }
+      &.slick-active button:before {
+        background: white;
+      }
+    }
+  }
+  li {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+    button {
+      border: 0;
+      background: transparent;
+      display: block;
+      height: 20px;
+      width: 20px;
+      outline: none;
+      line-height: 0px;
+      font-size: 0px;
+      color: transparent;
+      padding: 5px;
+      cursor: pointer;
+      &:hover, &:focus {
+        outline: none;
+        &:before {
+            opacity: 1;
+        }
+      }
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 12px;
+        height: 12px;
+        text-align: center;
+        background-color: transparent;
+        border-radius: 50%;
+        border: 2px solid white;
+        opacity: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        @include mq(large) {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+    &.slick-active button:before {
+      background: white;
+    }
+  }
+}

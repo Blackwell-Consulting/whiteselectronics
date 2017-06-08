@@ -1,0 +1,68 @@
+// ================================
+// Detecting 101
+// ================================
+
+.how-to,
+.tax-video-type {
+
+  a.how-to-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    &:after {
+      @extend .sprite-whites;
+      @include sprite($play-large);
+      @extend %abs-center;
+      top: 42%;
+      content: "";
+    }
+  }
+}
+
+.video-stage {
+  max-width: rem(800px);
+  margin: rem(0 auto 100px);
+  text-align: left;
+  @include mq(medium) {
+    margin-bottom: rem(150px);
+    text-align: center;
+  }
+
+  a {
+    display: inline-block;
+    background: setcolor(bright-blue);
+    padding: rem(10px);
+    margin-bottom: rem(10px);
+    @include setfont(default,700);
+    font-size: rem(15px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+    @include mq(medium) {
+      position: absolute;
+      top: rem(20px);
+      left: 0;
+      bottom: auto;
+      padding: rem(14px 10px);
+      font-size: rem(17.5px);
+      margin-bottom: 0;
+    }
+    &:hover,
+    &:focus {
+      color: white;
+    }
+  }
+
+  h1 {
+    padding-bottom: rem(10px);
+    font-size: rem(18px);
+    text-transform: uppercase;
+    text-align: center;
+    @include mq(medium) {
+      top: rem(31px);
+      padding: 0;
+      font-size: rem(26px);
+    }
+  }
+}

@@ -1,0 +1,136 @@
+// ================================
+// Navigation
+// ================================
+
+.nav-header {
+  @include cf;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-height: rem(64px);
+  padding-right: rem(25px);
+  padding-left: rem(25px);
+  background: none;
+  overflow: hidden;
+  transition: background-color 0.2s ease-in;
+  @include mq(large) {
+    position: static;
+    background: none !important;
+    padding: 0;
+    overflow: visible;
+  }
+  &.search-open {
+    overflow: visible;
+    max-height: 100%;
+  }
+  .open & {
+    max-height: 100%;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    background-color: white;
+    @include mq(large) {
+      overflow: visible;
+    }
+    .logo {
+      opacity: 0;
+      visibility: hidden;
+      @include mq(large) {
+        display: inline-block;
+        z-index: 1;
+      }
+    }
+    .menu-header-left ul,
+    .menu-header-right ul {
+      opacity: 1;
+      transition: opacity $timing-fast ease-in-out;
+    }
+    .social {
+      opacity: 1;
+      transition: opacity $timing-fast ease-in-out;
+    }
+  }
+}
+
+.menu-header-right {
+  z-index: -1;
+  @include mq(large) {
+    z-index: 1;
+  }
+}
+
+.menu-header-left ul,
+.menu-header-right ul {
+  @extend %naked-list;
+  display: inline-block;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  @include mq(large) {
+    margin-top: rem(36px);
+    opacity: 1;
+  }
+  li {
+    font-size: rem(35px);
+    @include setfont(font-one, 400);
+    margin-bottom: rem(26px);
+    @include mq(large) {
+      display: inline-block;
+      margin: rem(0 10px);
+      font-size: rem(24px);
+    }
+    @include mq(xlarge) {
+      margin: rem(0 18px);
+      font-size: rem(25px);
+    }
+    &.current-menu-item a,
+    &.current-page-ancestor a {
+      color: setcolor(bright-blue);
+    }
+  }
+  .search-results & li.menu-item-8.current-menu-item a {
+      color: black;
+      transition: color $timing-fast ease-in-out;
+      &:hover {
+        color: setcolor(bright-blue);
+      }
+  }
+}
+
+.menu-header-left ul {
+  float: left;
+  @include mq(large) {
+    width: 42.5%;
+    text-align: right;
+  }
+  li:first-child {
+    margin-left: 0;
+  }
+  li:last-child {
+    @include mq(large) {
+      margin-right: rem(18px);
+    }
+    @include mq(xlarge) {
+      margin-right: rem(28px);
+    }
+  }
+}
+
+.menu-header-right ul {
+  li:first-child {
+    @include mq(large) {
+      margin-left: rem(18px);
+    }
+    @include mq(xlarge) {
+      margin-left: rem(28px);
+    }
+  }
+  li:last-child {
+    margin-right: 0;
+  }
+  @include mq(large) {
+    float: left;
+    width: auto;
+  }
+}

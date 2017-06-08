@@ -1,0 +1,1237 @@
+// --------------------------------
+// Single Product
+// --------------------------------
+
+.single-product {
+
+  .outer-wrapper {
+    @include mq(max-medium) {
+      margin-left: rem(25px);
+      margin-right: rem(25px);
+    }
+  }
+
+  // .main-image {
+  //   max-height: rem(500px);
+  //   max-width: rem(500px);
+  //   margin: 0 auto;
+  //   @include mq(medium) {
+  //     height: rem(350px);
+  //     width: rem(450px);
+  //     background: white;
+  //   }
+  // }
+
+  .woocommerce-main-image {
+    @extend %abs-center-vertical;
+  }
+
+  .yith_magnifier_zoom_wrap {
+    max-width: rem(400px) !important;
+    height: rem(300px);
+    @include mq(medium) {
+      min-height: rem(400px);
+    }
+    @include mq(large) {
+      min-height: rem(500px) !important;
+      max-width: rem(500px) !important;
+    }
+  }
+
+  .product {
+    @include mq(large) {
+      background: url('assets/images/single-product-bg.png');
+    }
+    &:before {
+      @include mq(large) {
+        position: absolute;
+        top: -100%;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('assets/images/single-product-bg.png');
+        content: "";
+      }
+    }
+  }
+
+  .yith_magnifier_zoom_magnifier {
+    height: rem(200px) !important;
+    width: rem(200px) !important;
+    @include mq(large) {
+      height: rem(250px) !important;
+      width: rem(250px) !important;
+    }
+    @include mq(xlarge) {
+      height: rem(350px) !important;
+      width: rem(350px) !important;
+    }
+  }
+
+  .yith_magnifier_loading {
+    display: none !important;
+  }
+
+  .video-container {
+    @include mq(medium) {
+      margin-bottom: rem(90px);
+      min-width: 500px;
+    }
+  }
+
+  .image-bounding-box {
+    background: white;
+    max-width: rem(400px);
+    height: rem(300px);
+    box-sizing: content-box;
+    padding: rem(10px 20px);
+    @include mq(mini) {
+      padding: rem(20px 30px);
+    }
+    @include mq(medium) {
+      padding-bottom: 0;
+      height: rem(400px);
+    }
+    @include mq(large) {
+      height: rem(500px);
+      max-width: rem(500px);
+      padding: rem(20px 30px);
+      box-shadow:0 0 10px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  .images-gallery {
+    margin-top: rem(220px);
+    text-align: center;
+    max-width: rem(500px);
+    margin-left: auto;
+    margin-right: auto;
+    @include mq(small) {
+      margin-top: rem(240px);
+    }
+    @include mq(medium) {
+      padding: rem(30px 0 0);
+      margin-top: rem(210px);
+    }
+    @include mq(large) {
+      padding: rem(60px 0 0);
+    }
+
+    .thumbnails {
+      margin-top: rem(50px);
+      @include mq(medium) {
+        margin-top: rem(30px);
+      }
+      ul {
+        display: inline-block;
+      }
+      a {
+        display: inline-block;
+        margin: rem(0 7.5px 10px);
+        height: rem(62.5px) !important;
+        width: rem(62.5px) !important;
+        box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        transition: box-shadow $timing-fast ease-in-out;
+        background: white;
+        @include mq(medium) {
+          height: rem(85px) !important;
+          width: rem(85px) !important;
+        }
+        &:hover {
+          box-shadow:0 0 10px rgba(0, 0, 0, 0.8);
+        }
+
+        img {
+          max-width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .video-thumbnail {
+      display: inline-block;
+      margin: rem(0 7.5px 10px);
+      margin-left: rem(5px);
+      height: rem(62.5px) !important;
+      width: rem(62.5px) !important;
+      box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      transition: box-shadow $timing-fast ease-in-out;
+      background: white;
+      @include mq(medium) {
+        height: rem(85px) !important;
+        width: rem(85px) !important;
+      }
+      &:hover {
+        box-shadow:0 0 10px rgba(0, 0, 0, 0.8);
+      }
+      &:after {
+        @extend .sprite-whites;
+        @include sprite($play);
+        position: absolute;
+        top: rem(10px);
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        content: "";
+        @include mq(medium) {
+          top: rem(20px);
+        }
+      }
+      img {
+        max-width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .images {
+    display: inline-block;
+  }
+  .onsale {
+    display: none;
+  }
+  .name-and-price {
+    position: absolute;
+    top: rem(-130px);
+    z-index: 1;
+    @include mq(small) {
+      top: rem(-160px);
+      max-width: 50%;
+    }
+    @include mq(medium) {
+      top: rem(-100px);
+    }
+    @include mq(large) {
+      top: rem(-60px);
+    }
+
+    h1 {
+      font-size: rem(30px);
+      @include mq(medium) {
+        font-size: rem(34px);
+        letter-spacing: 4px;
+      }
+    }
+
+    .price {
+      font-size: rem(20px);
+      @include setfont(font-two, 500);
+      letter-spacing: 3px;
+      @include mq(medium) {
+        font-size: rem(26px);
+      }
+    }
+
+    .star-rating {
+      @include mq(large) {
+        display: none;
+      }
+    }
+  }
+
+  .buy-now {
+    margin-top: rem(10px);
+    text-align: center;
+    @include mq(small) {
+      position: absolute;
+      right: 0;
+      top: rem(-156px);
+      bottom: initial;
+      left: initial;
+      text-align: right;
+    }
+    @include mq(medium) {
+      top: rem(-106px);
+      right: rem(50px);
+    }
+    @include mq(large) {
+      top: rem(-66px);
+      right: rem(100px);
+    }
+    @include mq(xlarge) {
+      right: rem(150px);
+    }
+
+    form.cart {
+      display: none;
+    }
+
+    .quantity {
+      position: absolute;
+      top: rem(7px);
+      right: 0;
+    }
+
+    .variations_form.cart {
+      text-align: left;
+      .reset_variations {
+        display: none !important;
+      }
+      label {
+        display: block;
+        padding: rem(0 0 30px 0);
+        top: rem(6px);
+        margin-right: rem(12px);
+        font-size: rem(18px);
+      }
+      select {
+        font-size: rem(16px);
+      }
+    }
+
+    .woocommerce-variation.single_variation {
+      display: none !important;
+    }
+
+    .woocommerce-variation-add-to-cart.variations_button {
+      width: rem(220px);
+      .quantity:before {
+        display: inline-block;
+        margin-right: rem(4px);
+        font-size: rem(18px);
+        content: "Qty";
+      }
+      input {
+        width: rem(50px);
+        font-size: rem(16px);
+        padding-top: rem(2px);
+        padding-bottom: rem(2px);
+      }
+    }
+
+    form {
+      display: inline-block;
+      @include mq(small) {
+        display: block;
+      }
+    }
+
+    button,
+    a {
+      display: inline-block;
+      margin-bottom: rem(10px);
+      background: black;
+      font-size: rem(14px);
+      font-weight: 700;
+      color: white;
+      text-transform: uppercase;
+      transition: color $timing-fast ease-in-out;
+      &:hover {
+        color: setcolor(bright-blue);
+      }
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      &:hover {
+        color: white;
+      }
+    }
+
+    .out-of-stock {
+      @include mq(small) {
+        display: block;
+      }
+      &:hover {
+        color: white !important;
+        cursor:not-allowed;
+      }
+    }
+
+    button {
+      @extend %naked-button;
+      padding: rem(10px 12px);
+      cursor: pointer;
+    }
+
+    a {
+      padding: rem(11.5px 12px);
+      margin-left: rem(10px);
+      @include mq(small) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .description-section,
+  .reviews-block,
+  .product-specs {
+    border-bottom: 1px solid black;
+    @include mq(large) {
+      border-bottom: none;
+    }
+
+    .content {
+      max-height: 0;
+      overflow: hidden;
+      @include mq(large) {
+        max-height: 100% !important;
+      }
+    }
+
+    &.open {
+
+      .content {
+        max-height: 100%;
+        padding-bottom: rem(20px);
+      }
+
+      .title:after {
+        transform: scaleY(-1);
+        -ms-transform: scaleY(-1);
+      }
+    }
+
+    .title {
+      cursor: pointer;
+      &:after {
+        @extend .sprite-whites;
+        @include sprite($down-arrow);
+        display: inline-block;
+        margin-left: rem(6px);
+        content: "";
+        @include mq(large) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .product-information {
+    @include cf;
+    margin-top: rem(20px);
+    color: black;
+    @include mq(large) {
+      margin-top: rem(60px);
+      color: white;
+    }
+
+    .bg-image {
+      display: none;
+      @include mq(large) {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url('assets/images/product-bg.jpg');
+        background-size: cover;
+        z-index: 0;
+      }
+      &:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: transparentize(black,0.25);
+        content: "";
+      }
+    }
+
+    .attribute {
+      margin-left: 0 !important;
+      line-height: 1 !important;
+    }
+  }
+
+  .reviews-block {
+    display: inline-block;
+    width: 100%;
+    max-height: rem(625px);
+    @include mq(large) {
+      position: absolute;
+      top: rem(-10px);
+      right: rem(100px);
+      width: 34%;
+      background: setcolor(alt-red);
+      padding: rem(70px 0 30px);
+      @include mq(xlarge) {
+        right: rem(150px);
+      }
+    }
+
+    .description {
+      max-height: rem(345px);
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    > h2 {
+      padding-top: rem(14px);
+      margin-bottom: rem(14px);
+      text-transform: uppercase;
+      font-size: rem(17.5px);
+      @include setfont(font-two, 700);
+      letter-spacing: 3px;
+      @include mq(large) {
+        display: none;
+      }
+    }
+
+    .content {
+      @include mq(large) {
+        padding-bottom: 0;
+      }
+
+      p {
+        font-size: rem(16px);
+      }
+    }
+
+    .first-to-review {
+      text-align: center;
+
+      a {
+        display: inline-block;
+        margin-top: rem(20px);
+        color: black;
+        border-bottom: 1px solid transparent;
+        transition: border-bottom $timing-fast ease-in-out;
+        @include mq(large) {
+          color: white;
+        }
+        &:hover {
+          border-bottom: 1px solid black;
+          @include mq(large) {
+            border-bottom: 1px solid white;
+          }
+        }
+      }
+    }
+
+    .review-pagination {
+      padding-bottom: rem(10px);
+      border-bottom: 1px solid white;
+      @include mq(large) {
+        margin: rem(0 26px);
+      }
+      @include mq(xlarge) {
+        margin: rem(0 46px);
+      }
+      &.no-reviews {
+        display: none;
+        @include mq(large) {
+          display: block;
+        }
+      }
+    }
+
+    .comment-number {
+      display: inline-block;
+      @include setfont(font-two, 700);
+      font-size: rem(17.5px);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .comment-text {
+      padding: rem(10px 0 50px);
+      @include mq(large) {
+        padding: rem(20px 0 50px);
+      }
+    }
+
+    .meta-info {
+      @include cf;
+    }
+
+    .commentlist {
+      width: 100% !important;
+    }
+
+    p {
+      overflow: hidden !important;
+    }
+
+    p.meta {
+      display: inline-block;
+      float: left;
+      @include setfont(default);
+      font-size: rem(15px);
+      font-weight: 400;
+      text-transform: uppercase;
+      overflow: hidden;
+
+      strong {
+        max-height: rem(20px);
+        max-width: rem(200px);
+        margin: rem(0 0 -3px);
+        font-size: rem(15px);
+        font-weight: 600;
+        overflow: hidden;
+      }
+    }
+
+    .slick-list {
+      width: 100%;
+    }
+
+    .comment {
+      width: 100%;
+      padding: rem(0 10px);
+      margin-left: 0;
+      @include mq(large) {
+        padding: rem(0 26px);
+      }
+      @include mq(xlarge) {
+        padding: rem(0 46px);
+      }
+    }
+
+    .comments p {
+      font-size: rem(17px);
+    }
+
+    .avatar {
+      display: none;
+    }
+
+    button {
+      @extend %naked-button;
+      position: absolute;
+      bottom: 0;
+      padding: rem(5px 12.5px);
+      text-transform: uppercase;
+      color: black;
+      @include setfont(default, 700);
+      font-size: rem(17.5px);
+      border: 2px solid black;
+      z-index: 1;
+      @include mq(large) {
+        padding: rem(10px 25px);
+      }
+    }
+  }
+
+  .next-button {
+    right: 0;
+    z-index: 1000;
+    @include mq(large) {
+      right: rem(26px);
+    }
+    @include mq(xlarge) {
+      right: rem(46px);
+    }
+  }
+
+  .back-button {
+    left: 0;
+    z-index: 1000;
+    @include mq(large) {
+      left: rem(26px);
+    }
+    @include mq(xlarge) {
+      left: rem(46px);
+    }
+  }
+
+  .next-button,
+  .back-button {
+    @include mq(large) {
+      transition: border-color $timing-fast ease-in-out,
+                  color $timing-fast ease-in-out;
+    }
+    &:hover {
+      @include mq(large) {
+        border-color: white;
+        color: white;
+      }
+    }
+  }
+
+  .description-section {
+    display: inline-block;
+    width: 100%;
+    @include mq(large) {
+      float: left;
+      width: 50%;
+      padding-top: rem(75px);
+      padding-bottom: rem(80px);
+      min-height: rem(640px);
+    }
+
+    h2 {
+      padding-top: rem(14px);
+      margin-bottom: rem(14px);
+      text-transform: uppercase;
+      font-size: rem(17.5px);
+      @include setfont(font-two, 700);
+      letter-spacing: 3px;
+      @include mq(large) {
+        padding-top: 0;
+      }
+    }
+
+    p {
+      margin-bottom: rem(15px);
+      @include setfont(font-one, 400);
+      font-size: rem(17px);
+    }
+
+    a {
+      color: setcolor(bright-blue);
+      font-weight: 700;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .product-specs {
+    display: inline-block;
+    width: 100%;
+    @include mq(large) {
+      float: left;
+    }
+
+    .content {
+      @include mq(large) {
+        padding-bottom: 0;
+      }
+    }
+
+    h2 {
+      padding-top: rem(14px);
+      margin-bottom: rem(14px);
+      text-transform: uppercase;
+      font-size: rem(17.5px);
+      @include setfont(font-two, 700);
+      letter-spacing: 3px;
+      @include mq(large) {
+        padding-top: 0;
+      }
+    }
+
+    h3 {
+      margin-bottom: rem(8px);
+      text-transform: uppercase;
+      @include setfont(font-two, 700);
+      font-size: rem(15px);
+      line-height: 1.2;
+    }
+
+    span,
+    p {
+      @include setfont(font-one, 400);
+      font-size: rem(17px);
+      @include mq(large) {
+        font-size: rem(20px);
+      }
+    }
+
+    .shop_attributes {
+      @include cf;
+      @extend %naked-list;
+
+      li {
+        float: left;
+        width: 50%;
+        margin-top: rem(18px);
+        @include mq(medium) {
+          margin-top: rem(30px);
+        }
+        @include mq(large) {
+          width: 33.333%;
+          height: rem(80px);
+          padding-left: rem(70px);
+        }
+        &:first-child,
+        &:nth-child(2) {
+          margin-top: 0;
+        }
+        &:nth-child(3) {
+          margin-top: 18px;
+          @include mq(medium) {
+            margin-top: rem(30px);
+          }
+          @include mq(large) {
+            margin-top: 0;
+          }
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+
+        &.attribute {
+
+          span {
+            display: inline-block;
+            &:first-of-type {
+              position: absolute;
+              top: 0;
+              left: rem(5px);
+              width: rem(60px);
+              &:before {
+                display: none;
+                @include mq(large) {
+                  @extend .sprite-whites;
+                  @include sprite($generic);
+                  margin: 0 auto;
+                  content: "";
+                }
+              }
+            }
+            &.adjustable-length:before {
+              @include sprite($length);
+            }
+            &.all-metal-audio:before {
+              @include sprite($all-metal-audio);
+            }
+            &.apps:before {
+              @include sprite($apps);
+            }
+            &.audio-modulation:before {
+              @include sprite($audio-modulation);
+            }
+            &.audio-plug:before {
+              @include sprite($audio-plug);
+            }
+            &.backlit-display:before {
+              @include sprite($backlit);
+            }
+            &.batteries:before {
+              @include sprite($battery);
+            }
+            &.battery-life:before {
+              @include sprite($battery-life);
+            }
+            &.coil-configuration:before {
+              @include sprite($frequency);
+            }
+            &.disc-audio:before {
+              @include sprite($disc-audio);
+            }
+            &.downloadable-updates:before {
+              @include sprite($downloadable-updates);
+            }
+            &.frequency:before {
+              @include sprite($frequency);
+            }
+            &.height:before {
+              @include sprite($height);
+            }
+            &.included-accessories:before {
+              @include sprite($included-accessories);
+            }
+            &.number-of-presets:before {
+              @include sprite($number-of-presets);
+            }
+            &.optional-coils:before {
+              @include sprite($optional-coils);
+            }
+            &.pinpoint:before {
+              @include sprite($pinpoint);
+            }
+            &.sat:before {
+              @include sprite($sat);
+            }
+            &.size:before {
+              @include sprite($size);
+            }
+            &.standard-coil:before {
+              @include sprite($coil);
+            }
+            &.tone-id:before {
+              @include sprite($tone-id);
+            }
+            &.type:before {
+              @include sprite($type);
+            }
+            &.unique-features:before {
+              @include sprite($unique-features);
+            }
+            &.warranty:before {
+              @include sprite($warranty);
+            }
+            &.waterproof:before {
+              @include sprite($waterproof);
+            }
+            &.weight:before {
+              @include sprite($weight);
+            }
+            &.wireless-headphones:before {
+              @include sprite($wireless-headphones);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #reviews {
+    padding-top: rem(70px);
+    float: left;
+    width: 100%;
+    @include mq(large) {
+      padding-bottom: rem(20px);
+    }
+
+    .comment-status {
+      margin-top: rem(10px);
+    }
+
+    #review_form_wrapper {
+      max-width: rem(700px);
+      margin: 0 auto;
+    }
+
+    label {
+      color: black;
+      @include mq(large) {
+        color: white;
+      }
+    }
+
+    textarea {
+      font-size: rem(16px);
+      height: rem(100px);
+    }
+
+    #commentform textarea.error,
+    #commentform input.error {
+      border-color: #eee !important; //override plugin
+    }
+
+    .form-submit {
+      text-align: center;
+    }
+
+    div.error {
+      margin-top: rem(6px);
+      font-size: rem(12px);
+      @include setfont(default,700);
+      color: setcolor(bright-red);
+      line-height: 1.1em;
+    }
+
+    .submit {
+      @extend %naked-button;
+      background: setcolor(bright-blue);
+      padding: rem(12px 35px);
+      margin-top: rem(10px);
+      margin-bottom: rem(10px);
+      color: black;
+      text-transform: uppercase;
+      font-weight: 700;
+      transition: color $timing-fast ease-in-out;
+      width: auto;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .featured-finds-container {
+    float: left;
+    width: 100%;
+    margin-top: rem(30px);
+    text-align: center;
+    @include mq(large) {
+      margin-top: rem(80px);
+    }
+  }
+
+  .no-featured-finds {
+    float: left;
+    width: 100%;
+    @include mq(large) {
+      padding-bottom: rem(130px);
+    }
+  }
+
+  .featured-finds {
+    display: inline-block;
+    margin: 0 auto;
+    max-width: rem(720px);
+    text-align: center;
+    @include mq(large) {
+      padding-bottom: rem(50px);
+    }
+
+    h2 {
+      padding-bottom: rem(10px);
+      margin: rem(0 auto 30px);
+      @include setfont(font-one, 600);
+      font-style: italic;
+      font-size: rem(13px);
+      text-transform: uppercase;
+      max-width: rem(660px);
+      letter-spacing: 3px;
+      @include mq(large) {
+        font-size: rem(18px);
+        border-bottom: 1px solid rgba(255,255,255, 0.3);
+      }
+    }
+
+    .finds-container {
+      @include cf;
+      max-width: rem(400px);
+      @include mq(medium) {
+        max-width: 100%;
+      }
+    }
+
+    .find {
+      display: inline-block;
+      float: left;
+      width: 50%;
+      padding-bottom: rem(20px);
+      @include mq(medium) {
+        width: 25%;
+        padding: rem(0 22.5px 20px);
+      }
+      &:only-child { // if 1 find
+        width: 100%;
+      }
+      &:nth-child(1):nth-last-child(2),
+      &:nth-child(2):nth-last-child(1) {  // if 2 finds
+        width: 50%;
+      }
+      &:nth-child(1):nth-last-child(3),
+      &:nth-child(2):nth-last-child(2),
+      &:nth-child(3):nth-last-child(1) {  // if 3 finds
+        @include mq(medium) {
+          width: 33.333%;
+        }
+      }
+    }
+
+    a {
+      display: inline-block;
+      @include setfont(font-one, 400);
+      font-style: italic;
+      font-size: rem(18px);
+      letter-spacing: 1px;
+      @include mq(large) {
+        color: white
+      }
+      &:hover {
+
+        img {
+          box-shadow:0 0 10px rgba(0, 0, 0, 0.8);
+        }
+      }
+
+      h3 {
+        font-weight: inherit;
+      }
+    }
+
+    img {
+      height: rem(107.5px);
+      width: rem(107.5px);
+      margin-top: rem(10px);
+      border-radius: 50%;
+      transition: box-shadow $timing-fast ease-in-out;
+      @include mq(large) {
+        height: rem(123px);
+        width: rem(123px);
+      }
+    }
+  }
+
+  .used-by-adventurers-container {
+    padding-top: rem(30px);
+    padding-bottom: rem(10px);
+    text-align: center;
+    @include mq(medium) {
+      padding-top: rem(50px);
+      padding-bottom: rem(30px);
+    }
+    @include mq(large) {
+      padding-bottom: rem(185px);
+    }
+
+    .bg-image {
+      display: none;
+      position: absolute;
+      top: rem(-138px);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      background-size: cover;
+      z-index: -1;
+      @include mq(large) {
+        display: block;
+      }
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        background: rgba(255,255,255,0.65);
+        content: "";
+        z-index: -2;
+      }
+    }
+  }
+  .used-by-adventurers {
+    width: 100%;
+    margin: 0 auto;
+    max-width: rem(450px);
+    text-align: center;
+    h2 {
+      padding-bottom: rem(10px);
+      margin: rem(0 auto 25px);
+      @include setfont(font-one, 600);
+      font-style: italic;
+      font-size: rem(13px);
+      text-transform: uppercase;
+      max-width: rem(660px);
+      letter-spacing: 3px;
+      color: black;
+      @include mq(large) {
+        font-size: rem(18px);
+        border-bottom: 1px solid rgba(0,0,0, 0.3);
+      }
+    }
+    .adventurers-container {
+      @include cf;
+      max-width: rem(400px);
+      margin: 0 auto;
+      @include mq(medium) {
+        display: inline-block;
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+    .adventurer {
+      display: inline-block;
+      float: left;
+      width: 50%;
+      padding-bottom: rem(20px);
+      @include mq(medium) {
+        padding: rem(0 22.5px 0);
+      }
+      &:only-child {
+        width: 100%;
+      }
+    }
+    a {
+      display: inline-block;
+      @include setfont(font-one, 400);
+      font-style: italic;
+      font-size: rem(18px);
+      letter-spacing: 1px;
+      @include mq(large) {
+        color: black;
+      }
+      &:hover {
+        img {
+          box-shadow:0 0 10px rgba(0, 0, 0, 0.8);
+        }
+      }
+      h3 {
+        font-weight: inherit;
+      }
+    }
+    img {
+      height: rem(107.5px);
+      width: rem(107.5px);
+      margin-top: rem(10px);
+      border-radius: 50%;
+      transition: box-shadow $timing-fast ease-in-out;
+      @include mq(large) {
+        height: rem(185px);
+        width: rem(185px);
+      }
+    }
+  }
+}
+.recommended-accessories,
+.cross-sells {
+  display: none;
+  margin-top: rem(70px);
+  float: left;
+  width: 100%;
+  @include mq(large) {
+    display: block;
+  }
+  h2 {
+    padding-top: rem(14px);
+    margin-bottom: rem(20px);
+    @include mq(large) {
+      padding-top: 0;
+    }
+  }
+  ul {
+    @include cf;
+    @extend %naked-list;
+    li {
+      float: left;
+      text-align: center;
+      img {
+        height: rem(148px);
+        width: rem(148px);
+        border: 2px solid transparent;
+        transition: border $timing-fast ease-in-out;
+        background: white;
+        @include mq(xlarge) {
+          height: rem(197.5px);
+          width: rem(197.5px);
+        }
+      }
+      a {
+        display: inline-block;
+        margin-top: rem(8px);
+        text-transform: uppercase;
+        font-size: rem(15px);
+        @include setfont(font-two, 700);
+        color: white;
+        max-width: rem(197.5px);
+        padding: rem(0 4px);
+        &:hover {
+          img {
+            border: 2px solid setcolor(bright-blue);
+          }
+        }
+        h3 {
+          padding-top: rem(6px);
+          line-height: 1.2;
+          letter-spacing: 1px;
+        }
+        .price {
+          display: inline-block;
+          padding-top: rem(10px);
+        }
+      }
+    }
+  }
+  .woocommerce-cart & {
+    float: none !important;
+    width: 100% !important;
+    li {
+      width: 25% !important;
+    }
+    a {
+      color: black;
+    }
+  }
+}
+
+.recommended-accessories {
+
+  h2 {
+    text-transform: uppercase;
+    font-size: rem(17.5px);
+    @include setfont(font-two, 700);
+    letter-spacing: 3px;
+  }
+
+  li {
+    width: 25%;
+  }
+}
+
+body.en .buy-now form.cart {
+  display: block;
+}

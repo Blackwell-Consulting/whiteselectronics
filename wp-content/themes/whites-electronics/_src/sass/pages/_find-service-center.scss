@@ -1,0 +1,37 @@
+// ================================
+// Find A Service Center
+// ================================
+
+hr.blue {
+  background-color: setcolor(bright-blue);
+  border: none;
+  height: rem(2px);
+}
+
+.center-blocks {
+	@include cf;
+	.block {
+    margin-bottom: rem(20px);
+    font-weight: 500;
+    font-size: rem(18px);
+    line-height: 1.5;
+    @include mq(medium) {
+		  float: left;
+		  width: 50%;
+      margin-bottom: 0;
+    }
+    .red,
+    .blue {
+      @include setfont(default,600);
+    }
+    .red {
+      color: setcolor(bright-red);
+    }
+    .blue {
+      color: setcolor(bright-blue);
+    }
+    &:last-child {
+      margin-bottom: rem(10px);
+    }
+	}
+}

@@ -1,0 +1,149 @@
+// ================================
+// Device Care
+// ================================
+
+.pages {
+	@include cf;
+  max-width: rem(1440px);
+
+  .page {
+    float: left;
+    height: rem(200px);
+    width: 100%;
+    text-align: center;
+    @include mq(small) {
+      width: 50%;
+      height: rem(300px);
+    }
+    @include mq(large) {
+      width: 33.333%;
+    }
+
+    h2 {
+      position: absolute;
+      @extend %abs-center-vertical;
+      left: 0;
+      right: 0;
+      padding: rem(0 30px);
+      text-align: center;
+      z-index: 1;
+      font-size: rem(30px);
+      text-transform: uppercase;
+      line-height: 1.5;
+      letter-spacing: 3px;
+      @include setfont(font-two, 700);
+      @include mq(xlarge) {
+        font-size: rem(35px);
+      }
+    }
+
+    &.troubleshooting {
+      background: url('assets/images/troubleshooting.jpg');
+      background-size: cover;
+    }
+
+    &.find-a-service-center {
+      background: url('assets/images/find-a-service-center.jpg');
+      background-size: cover;
+    }
+
+    &.how-to-send-in-your-machine {
+      background: url('assets/images/how-to-send-in-your-machine.jpg');
+      background-size: cover;
+    }
+
+    &.check-your-repair-status {
+      background: url('assets/images/check-your-repair-status.jpg');
+      background-size: cover;
+    }
+
+    &.manuals {
+      background: url('assets/images/manuals.jpg');
+      background-size: cover;
+    }
+
+    &.warranty-registration {
+      background: url('assets/images/warranty-registration.jpg');
+      background-size: cover;
+    }
+  }
+}
+
+.print-this-page {
+  @include cf;
+  strong {
+    @include setfont(default,700);
+    font-size: rem(20px);
+  }
+  .field {
+    float: left;
+    width: 100%;
+    padding-right: rem(20px);
+    padding-bottom: rem(10px);
+    @include setfont(default,700);
+    font-size: rem(16px);
+    @include mq(small) {
+      width: 35%;
+    }
+  }
+  .field-value {
+    float: left;
+    width: 100%;
+    padding-bottom: rem(10px);
+    min-height: rem(34px);
+    @include setfont(default);
+    font-size: rem(16px);
+    @include mq(small) {
+      width: 65%;
+    }
+  }
+  .button-container {
+    float: left;
+    width: 100%;
+    padding-bottom: rem(80px);
+    text-align: center;
+  }
+  hr {
+    float: left;
+    width: 100%;
+    &.last {
+      margin-top: rem(28px);
+    }
+  }
+  .print-button {
+    display: inline-block;
+    width: 100%;
+    margin-top: rem(20px);
+    text-align: center;
+    background: setcolor(bright-blue);
+    padding: rem(14px 0);
+    @include setfont(default,700);
+    font-size: rem(17.5px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+    text-decoration: none !important; //override default link styles for content pages
+    @include mq(small) {
+      width: auto;
+      padding-right: rem(100px);
+      padding-left: rem(100px);
+    }
+    &:hover,
+    &:focus {
+      color: white;
+    }
+  }
+}
+
+.page-template-troubleshooting {
+  h2 {
+    font-weight: 700;
+  }
+  ol li {
+    margin-left: rem(16px);
+  }
+  h3 {
+    @include setfont(default);
+    font-size: rem(24px);
+  }
+}
