@@ -39,7 +39,7 @@ This is a Wordpress site.
 1. Run `npm install && gulp install` to install Node dependencies
 1. Log into your local Wordpress dashboard at http://local.whiteselectronics.com/wp/wp-login.php using the staging credentials found below
 1. If a database update is required, do the update
-1. Navigate to `Appearance > Themes` and activate the Majestic Swing IQ theme.
+1. Navigate to `Appearance > Themes` and activate the Whites Electronics theme.
 1. Run `gulp` ( from the theme root ) to compile assets
 1. Start gulp watch `gulp watch` and begin development
 
