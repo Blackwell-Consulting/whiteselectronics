@@ -15,7 +15,7 @@ config.scaffold = {
 config.browserSync = {
   settings: {
     server: false,
-    proxy: "local.whites-electronics",
+    proxy: "local.whiteselectronics.com",
     files: [
       './**/*.js',
       './**/*.css',
