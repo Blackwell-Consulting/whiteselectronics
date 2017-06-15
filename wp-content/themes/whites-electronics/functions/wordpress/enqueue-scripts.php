@@ -32,5 +32,9 @@ function enqueue_custom_scripts() {
 	wp_register_script('site-main', (get_stylesheet_directory_uri() . '/public/assets/js/main.js'), array('jquery'), '1.0.0', true);
 	wp_enqueue_script('site-main');
 
+	// Add secondary scripts as current gulp process breaks the site
+	wp_register_script('custom', (get_stylesheet_directory_uri() . '/public/assets/js/custom.js'), array('jquery'), '1.0.0', true);
+	wp_enqueue_script('custom');
+
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_custom_scripts' );

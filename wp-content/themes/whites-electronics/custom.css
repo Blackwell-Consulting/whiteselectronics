@@ -44,6 +44,7 @@ header .search-icon:before {
     top: 0;
     left: 0;
     z-index: 1010;
+    display: none;
 }
 
 .lightbox__content {

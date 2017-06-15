@@ -92,12 +92,13 @@
       <header>
         <a href="<?php echo get_home_url(); ?>" class="logo"><span>White's Electronics</span></a>
       </header>
-      <p>Are you visiting White’s from outside the USA? <br />Visit your regional site for more relevant pricing, promotions and events.</p>
+      <p>Are you visiting White's from outside the USA? <br />Visit your regional site for more relevant pricing, promotions and events.</p>
       <div class="location-chooser">
         <a href="?lang=gb"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icon_uk.png" alt="UK"></a>
         <a href="?lang=us"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icon_usa.png" alt="USA"></a>
       </div><!-- /.location-chooser -->
     </div><!-- /.lightbox__content -->
+    <a class="js-trigger-lightbox">Change your locale</a>
   </div><!-- /.lightbox -->
 
 <?php include(get_partial_path('footer')); ?>
