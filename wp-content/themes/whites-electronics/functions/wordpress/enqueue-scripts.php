@@ -6,6 +6,10 @@ function enqueue_custom_styles() {
 	wp_register_style('style.css', (get_stylesheet_directory_uri() . '/style.css'), false, false, 'screen');
 	wp_enqueue_style('style.css');
 
+	// Add secondary stylesheet as current gulp process breaks the site
+	wp_register_style('custom.css', (get_stylesheet_directory_uri() . '/custom.css'), false, false, 'screen');
+	wp_enqueue_style('custom.css');
+
 	// Add print stylesheet
 	wp_register_style('print.css', (get_stylesheet_directory_uri() . '/print.css'), false, false, 'print');
 	wp_enqueue_style('print.css');

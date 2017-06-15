@@ -1,0 +1,92 @@
+/*********
+Custom CSS
+**********/
+header .logo:before {
+    background-position: -127px -124px;
+    width: 8.5rem;
+}
+
+.lightbox__overlay {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.lightbox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+}
+
+.lightbox__content {
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    width: 75%;
+    max-width: 750px;
+    text-align: center;
+    padding: 25px;
+}
+
+.lightbox__content p {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: normal;
+    letter-spacing: 2px;
+}
+
+.lightbox__content header {
+    position: relative;
+    height: 50px;
+    border-bottom: none;
+    box-shadow: none;
+    margin-bottom: 25px;
+}
+
+.lightbox__content header .logo {
+    float: none
+}
+
+.lightbox__content .location-chooser {
+    padding: 10px;
+}
+
+.lightbox__content .location-chooser a {
+    display: block;
+    margin-bottom: 15px;
+}
+
+@media ( min-width: 48em ) {
+    header .logo:before {
+        background-position: -4px -124px;
+        width: 12.2rem;
+    }
+
+    .lightbox__content header .logo::before {
+        background-position: -128px -124px;
+        width: 84px;
+        height: 53px;
+    }
+
+    .lightbox__content p {
+        font-size: 28px;
+    }
+
+    .lightbox__content .location-chooser a {
+        margin-bottom: 0;
+    }
+
+    .lightbox__content .location-chooser a:first-child {
+        float: left;
+    }
+
+    .lightbox__content .location-chooser a:last-child {
+        float: right;
+        margin-right: -55px;
+    }
+}
