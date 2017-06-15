@@ -98,7 +98,6 @@
         <a href="?lang=us"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icon_usa.png" alt="USA"></a>
       </div><!-- /.location-chooser -->
     </div><!-- /.lightbox__content -->
-    <a class="js-trigger-lightbox">Change your locale</a>
   </div><!-- /.lightbox -->
 
 <?php include(get_partial_path('footer')); ?>
