@@ -38,3 +38,16 @@ function enqueue_custom_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_custom_scripts' );
+
+function wpml_ls_filter( $languages ) {
+	global $sitepress;
+	if( $_SERVER[ 'QUERY_STRING' ] ) {
+		if( strpos( basename( $_SERVER[ 'REQUEST_URI'] ), $_SERVER[ 'QUERY_STRING' ] ) !== false ) {
+			foreach( $languages as $lang_code => $language ) {
+				$languages[ $lang_code ][ 'url' ] = $languages[ $lang_code ][ 'url' ]. '?' . $_SERVER[ 'QUERY_STRING' ];
+			}
+		}
+	}
+	return $languages;
+}
+add_filter( 'icl_ls_languages', 'wpml_ls_filter' );

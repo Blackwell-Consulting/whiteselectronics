@@ -6,6 +6,7 @@ whitesElectronics = {
     init: function() {
 
         whitesElectronics.setupLocaleLightbox();
+        whitesElectronics.appendQueryStringToUrls();
 
         $( window ).on( 'resize', whitesElectronics.debounce( function( ) {}, 500 ) );
 
@@ -34,6 +35,23 @@ whitesElectronics = {
         } else {
             $( '.lightbox' ).delay( '200ms' ).fadeIn();
         }
+    },
+
+    appendQueryStringToUrls: function() {
+
+        $( 'a[href]' ).each( function() {
+            var href = $( this ).attr( 'href' );
+
+            if ( href.indexOf( '?' ) !== -1 ) {
+                // Query string exists, append current query string
+                href += '&' + location.search.replace( /^\?/, '' );
+            } else {
+                // No query string yet, add it
+                href += location.search;
+            }
+
+            $( this ).attr( 'href', href );
+        } );
     }
 
 } // end object
