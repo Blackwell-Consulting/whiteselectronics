@@ -10,7 +10,7 @@
   <footer>
     <div class="wrapper">
       <div class="language-select">
-        <?php do_action('icl_language_selector'); ?>
+        <?php //do_action('icl_language_selector'); ?>
       </div>
       <div class="social">
         <h2><?php _e("Connect");?></h2>
