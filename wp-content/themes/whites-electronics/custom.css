@@ -6,6 +6,31 @@ header .logo:before {
     width: 8.5rem;
 }
 
+header .shopping-cart-icon:before {
+    background-position: -368px -236px;
+}
+
+header .search-icon:before {
+    background-position: -232px -281px;
+}
+
+.social ul .facebook:before {
+    background-position: -325px -41px;
+}
+
+.social ul .twitter:before {
+    background-position: 0 -241px;
+}
+
+.social ul .youtube:before {
+    background-position: 4px -200px;
+    width: 65px;
+}
+
+.social ul .instagram:before {
+    background-position: -325px 0;
+}
+
 .lightbox__overlay {
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
