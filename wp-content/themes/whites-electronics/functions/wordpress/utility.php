@@ -1015,3 +1015,54 @@ function remove_thickbox() {
 }    
 
 add_action( 'wp_enqueue_scripts', 'remove_thickbox' );
+
+function custom_language_selector2() {
+    $languages = icl_get_languages('skip_missing=0&orderby=code');
+    if(!empty($languages)){
+        echo '<div  class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-dropdown js-wpml-ls-legacy-dropdown" id="lang_sel"><ul>';
+        foreach($languages as $l){
+            echo '<li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-gb wpml-ls-current-language wpml-ls-last-item wpml-ls-item-legacy-dropdown">';
+            if($l['country_flag_url']){
+                if(!$l['active']) echo '<a href="'.$l['url'].'" class="js-wpml-ls-item-toggle wpml-ls-item-toggle lang_sel_sel icl-gb">';
+                echo '<img src="'.$l['country_flag_url'].'" height="12" alt="'.$l['language_code'].'" width="18" />';
+                if(!$l['active']) echo '</a>';
+            }
+            if(!$l['active']) echo '<a href="'.$l['url'].'">';
+            echo icl_disp_language($l['native_name'], $l['translated_name']);
+            if(!$l['active']) echo '</a>';
+            echo '</li>';
+        }
+        echo '</ul></div>';
+    }
+}
+
+function custom_language_selector() {
+    $languages = icl_get_languages( 'skip_missing=0&orderby=code' );
+
+    if ( ! empty( $languages ) ) {
+
+        echo '
+        <div class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-dropdown js-wpml-ls-legacy-dropdown" id="lang_sel">
+            <ul>
+            <li tabindex="0" class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-gb wpml-ls-current-language wpml-ls-last-item wpml-ls-item-legacy-dropdown">
+                <a href="#" class="js-wpml-ls-item-toggle wpml-ls-item-toggle lang_sel_sel icl-gb">
+                    <span class="wpml-ls-native icl_lang_sel_native">English (UK)</span>
+                </a>
+                <ul class="wpml-ls-sub-menu">
+                    <li class="icl-en wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-first-item">
+                        <a class="language-picker" href="?lang=gb">
+                            <span class="wpml-ls-native icl_lang_sel_native">English (UK)</span>
+                        </a>
+                    </li>
+                    <li class="icl-en wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-first-item">
+                        <a class="language-picker" href="?lang=us">
+                            <span class="wpml-ls-native icl_lang_sel_native">English (US)</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+        ';
+    }
+}

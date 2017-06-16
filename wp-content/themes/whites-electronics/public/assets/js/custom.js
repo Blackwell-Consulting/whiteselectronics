@@ -40,7 +40,8 @@ whitesElectronics = {
     appendQueryStringToUrls: function() {
 
         $( 'a[href]' ).each( function() {
-            var href = $( this ).attr( 'href' );
+            var $this = $( this ); 
+            var href = $this.attr( 'href' );
 
             if ( href.indexOf( '?' ) !== -1 ) {
                 // Query string exists, append current query string
@@ -50,7 +51,9 @@ whitesElectronics = {
                 href += location.search;
             }
 
-            $( this ).attr( 'href', href );
+            if ( ! $this.hasClass( 'language-picker' ) ) {
+                $this.attr( 'href', href );
+            }
         } );
     }
 
