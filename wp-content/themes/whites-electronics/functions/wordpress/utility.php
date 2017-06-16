@@ -1010,8 +1010,8 @@ add_filter('gform_confirmation_anchor', function () {
 });
 
 function remove_thickbox() {
-    wp_deregister_script('thickbox');
+    wp_deregister_script( 'thickbox' );
     wp_enqueue_script( 'jquery' );
 }    
 
-add_action('wp_enqueue_scripts', 'remove_thickbox');
+add_action( 'wp_enqueue_scripts', 'remove_thickbox' );
