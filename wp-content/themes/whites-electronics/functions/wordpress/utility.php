@@ -1046,7 +1046,7 @@ function custom_language_selector() {
             <ul>
             <li tabindex="0" class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-gb wpml-ls-current-language wpml-ls-last-item wpml-ls-item-legacy-dropdown">
                 <a href="javascript:void(0)" class="js-wpml-ls-item-toggle wpml-ls-item-toggle lang_sel_sel icl-gb">
-                    <span class="wpml-ls-native icl_lang_sel_native">Change Language</span>
+                    <span class="wpml-ls-native icl_lang_sel_native">Change Locale</span>
                 </a>
                 <ul class="wpml-ls-sub-menu">
                     <li class="icl-en wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-first-item">
