@@ -116,3 +116,28 @@ header .search-icon:before {
         margin-right: -55px;
     }
 }
+
+/************
+Store Locator
+*************/
+#wpsl-stores ul li {
+    cursor: pointer;
+}
+
+#wpsl-stores ul li.wpsl-preloader:hover {
+    background: transparent;
+    cursor: default;
+}
+
+#wpsl-stores ul li:not(.wpsl-preloader):hover {
+    background: #409eff;
+}
+
+#wpsl-stores ul li:hover a,
+#wpsl-stores ul li:hover p {
+    color: #fff;
+}
+
+#wpsl-stores .wpsl-directions {
+    text-decoration: underline;
+}
