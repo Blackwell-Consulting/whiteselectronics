@@ -146,3 +146,15 @@ Store Locator
     background: #409eff;
     color: #fff;
 }
+
+/**************
+FindA Dealer UK
+***************/
+.find-a-dealer-uk .find.grid-item {
+    position: relative;
+}
+
+.find-a-dealer-uk .find.grid-item h2 {
+    position: absolute;
+    bottom: 0;
+}
