@@ -29,7 +29,46 @@
             <span class="dismiss capitalize"><?php _e("Dismiss"); ?></span>
         </div>
         <div class="outer-wrapper">
-             <div class="sidebar">
+            <div class="dealer-detail">
+            <?php
+                //vars
+                $logo = get_field( 'logo' );
+                $about = get_field( 'about_us' );
+                $location = get_field( 'location' );
+            ?>
+
+                <?php if( !empty( $logo ) ): ?>
+                <div class="dealer-detail-logo gray-box">
+                    <div class="gray-box-inner">
+                        <img src="<?php echo $logo['sizes']['large']; ?>" alt="<?php echo $logo['alt']; ?>" />
+                    </div><!-- /.gray-box-inner -->
+                </div><!-- /.dealer-detail-logo -->
+                <?php endif; ?>
+
+                 <?php if( !empty( $location['address'] ) ): ?>
+                <div class="dealer-detail-map gray-box">
+                    <?php include(get_stylesheet_directory() . '/partials/map.php'); ?>
+                </div><!-- /.dealer-detail-map -->
+                <?php endif; ?>
+
+                <div class="dealer-detail-address gray-box">
+                    <h1 class="dealer-title"><?php the_title(); ?></h1>
+                    <?php if( !empty( $location['address'] ) ): ?>
+                    <h2 class="dealer-title-small"><?php echo $location['address']; ?></h2>
+                    <?php endif; ?>
+                </div><!-- /.dealer-detail-address -->
+
+                <?php if( !empty( $about ) ): ?>
+                <div class="dealer-detail-about gray-box">
+                    <h3 class="dealer-title-smaller">
+                        About Us
+                    </h3>
+                    <?php echo $about; ?>
+                </div><!-- /.dealer-detail-about -->
+                <?php endif; ?>
+                <div class="clearfix"></div><!-- /.clearfix -->
+            </div><!-- /.dealer-detail -->
+            <div class="sidebar">
                 <h1>Filter By</h1>
                 <div class="parent-categories">
                     <h2>Country</h2>
@@ -65,16 +104,6 @@
                 </div><!-- /.parent-categories -->
             </div><!-- /.sidebar -->
         </div><!-- /.outer-wrapper -->
-
-        <main>
-          <div class="wrapper">
-            <div class="video-stage">
-              <h1><?php the_title(); ?></h1>
-            </div>
-          </div>
-        </main>
-
-        <div class="clearfix"></div><!-- /.clearfix -->
 	</div>
 
 </main>

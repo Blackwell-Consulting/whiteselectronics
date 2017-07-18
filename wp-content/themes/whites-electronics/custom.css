@@ -147,6 +147,11 @@ Store Locator
     color: #fff;
 }
 
+.grid-items.finds {
+    border-right: 2.5rem solid #fff;
+    border-left: 2.5rem solid #fff;
+}
+
 /**************
 FindA Dealer UK
 ***************/
@@ -172,4 +177,99 @@ FindA Dealer UK
 
 .find-a-dealer-uk .find.grid-item:hover h2 {
     color: #409eff;
+}
+
+.gray-box {
+    background: #ebebeb;
+    padding: 20px;
+    margin-bottom: 4rem;
+}
+
+.gray-box-inner {
+    background: #fff;
+}
+
+.dealer-detail {
+    width: 100%;
+    padding: .8rem .4rem .4rem;
+    margin-top: 4rem;
+    border-right: 2.5rem solid #fff;
+    border-left: 2.5rem solid #fff;
+}
+
+.dealer-detail-logo {
+    text-align: center;
+}
+
+.dealer-detail-logo img {
+    margin: 0 auto;
+}
+
+.detector-selector-banner {
+    clear: both;
+}
+
+body.single-dealer .sidebar {
+     margin-bottom: 4rem;
+}
+
+.dealer-detail .dealer-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.dealer-detail .dealer-title-small {
+    font-size: 1.5rem;
+}
+
+.dealer-detail .dealer-title-smaller {
+    font-size: 2.0rem;
+    margin-bottom: 1rem;
+}
+
+.dealer-detail  .dealer-map {
+	width: 100%;
+	height: 250px;
+	border: #ccc solid 1px;
+}
+
+/* fixes potential theme css conflict */
+.dealer-detail  .dealer-map img {
+   max-width: inherit !important;
+}
+
+@media ( min-width: 62.5em ) {
+
+    .dealer-detail {
+        width: calc( 100% - 17% );
+        float: right;
+        margin-top: 6.5rem;
+    }
+
+    .dealer-detail .dealer-detail-map {
+        float: right;
+        width: 50%;
+    }
+
+    .dealer-detail-address,
+    .dealer-detail-about {
+        width: 50%;
+        border-right: 2.5rem solid #fff;
+    }
+
+    .dealer-detail .dealer-title {
+        font-size: 4.0rem;
+    }
+
+    .dealer-detail .dealer-title-small {
+        font-size: 3.0rem;
+    }
+
+    .dealer-detail .dealer-title-smaller {
+        font-size: 2.0rem;
+    }
+
+    .dealer-detail  .dealer-map {
+        height: 500px;
+    }
 }
