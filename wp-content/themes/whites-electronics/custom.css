@@ -156,5 +156,20 @@ FindA Dealer UK
 
 .find-a-dealer-uk .find.grid-item h2 {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
+    text-transform: uppercase;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1.5;
+    background: #fff;
+    text-align: center;
+    font-family: Rajdhani,sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    width: 100%;
+}
+
+.find-a-dealer-uk .find.grid-item:hover h2 {
+    color: #409eff;
 }
