@@ -62,25 +62,41 @@
                 </div><!-- /.parent-categories -->
             </div><!-- /.sidebar -->
         </div><!-- /.outer-wrapper -->
-        <div class="finds grid-items">
             <?php
-                $categories = get_categories( array(
-                    'orderby' => 'name',
-                    'order'   => 'ASC',
-                    'parent' => 0
-                ) );
+                $args = array(
+                    'post_type' => 'dealer',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'category',
+                            'field'    => 'term_id',
+                            'terms'    => $category_id,
+                            ),
+                        ),
+                    );
 
-                foreach( $categories as $category ) :
+                $query = new WP_Query( $args );
             ?>
-                <div class="find grid-item">
-                    <a href="<?php echo get_category_link( $category->term_id ) ?>">
-                        <?php echo do_shortcode( sprintf( '[wp_custom_image_category term_id="%s"]', $category->term_id ) ); ?>
-                        <h2><?php echo $category->name ?></h2>
-                    </a>
-                </div><!-- /.find grid-item -->
-            <?php endforeach; ?>
-        </div><!-- /.finds grid-items -->
-        <div class="clearfix"></div><!-- /.clearfix -->
+
+                <?php if ( $query->have_posts() ): ?>
+                    <div class="finds grid-items">
+                        <?php while($query -> have_posts()) : $query -> the_post(); ?>
+                            <?php
+                                //vars
+                                $logo = get_field( 'logo' );
+                            ?>
+                            <div class="find grid-item">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php if( !empty( $logo ) ): ?>
+                                        <img src="<?php echo $logo['sizes']['large']; ?>" alt="<?php echo $logo['alt']; ?>" />
+                                    <?php endif; ?>
+                                    <h2><?php the_title(); ?></h2>
+                                </a>
+                            </div><!-- /.find grid-item -->
+                        <?php endwhile; ?>
+                    </div><!-- /.finds grid-items -->
+                    <div class="clearfix"></div><!-- /.clearfix -->
+            <?php endif; ?>
+            <?php wp_reset_query(); ?>
 	</div>
 
 </main>
