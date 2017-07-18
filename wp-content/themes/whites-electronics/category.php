@@ -82,7 +82,7 @@
                         <?php while($query -> have_posts()) : $query -> the_post(); ?>
                             <?php
                                 //vars
-                                $logo = get_field( 'logo' );
+                                $logo = get_field( 'listing_logo' );
                             ?>
                             <div class="find grid-item">
                                 <a href="<?php the_permalink(); ?>">
