@@ -16,13 +16,11 @@
             $backgroundImg = "background-image: url('" . $heroBgImage['sizes']['large'] . "')";
         }
 ?>
-
-    <div class="hero">
-        <div class="bg-image" style="<?php echo $backgroundImg; ?>"></div>
-        <h1 class="no-subtitle"><?php echo $current_category_name; ?></h1>
-    </div>
-
 	<div class="outer-wrapper">
+        <div class="hero">
+            <div class="bg-image" style="<?php echo $backgroundImg; ?>"></div>
+            <h1 class="no-subtitle"><?php echo $current_category_name; ?></h1>
+        </div>
         <div class="alert">
             <p><span><?php _e("Need Help?"); ?></span> <?php _e("We'll point you to the metal detector that's right for you."); ?></p>
             <a class="capitalize" href="<?php echo home_url('/detector-selector'); ?>"><?php _e("Detector Selector"); ?></a>
