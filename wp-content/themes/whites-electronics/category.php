@@ -7,7 +7,7 @@
 
 <main role="main" class="home find-a-dealer-uk">
 <?php
-        $uk_dealer_page = 66238;
+        $uk_dealer_page = get_id_by_slug( 'find-a-dealer-uk' );
         $heroBgImage = get_field( 'hero_background', $uk_dealer_page );
 
         $backgroundImg  ='';

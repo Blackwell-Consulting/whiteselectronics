@@ -61,6 +61,15 @@ include_once('functions/acf/all.php');
 add_action("wp_ajax_current_cart_icon", 'current_cart_icon');
 add_action("wp_ajax_nopriv_current_cart_icon", 'current_cart_icon');
 
+function get_id_by_slug($page_slug) {
+    $page = get_page_by_path($page_slug);
+    if ($page) {
+        return $page->ID;
+    } else {
+        return null;
+    }
+}
+
 function current_cart_icon () {
 	?>
 
