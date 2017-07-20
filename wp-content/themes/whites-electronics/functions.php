@@ -55,7 +55,8 @@ include_once('functions/wordpress/wpsl-csv-functions.php');
 // Gravity Forms
 include_once('functions/wordpress/gravityforms.php');
 
-
+// ACF Field Data
+include_once('functions/acf/all.php');
 
 add_action("wp_ajax_current_cart_icon", 'current_cart_icon');
 add_action("wp_ajax_nopriv_current_cart_icon", 'current_cart_icon');
