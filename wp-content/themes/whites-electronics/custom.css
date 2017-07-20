@@ -1,3 +1,52 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('assets/fonts/icons/icomoon.eot?p9gabm');
+  src:  url('assets/fonts/icons/icomoon.eot?p9gabm#iefix') format('embedded-opentype'),
+    url('assets/fonts/icons/icomoon.ttf?p9gabm') format('truetype'),
+    url('assets/fonts/icons/icomoon.woff?p9gabm') format('woff'),
+    url('assets/fonts/icons/icomoon.svg?p9gabm#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-linkedin:before {
+  content: "\e904";
+  color: #0077b5;
+}
+.icon-youtube:before {
+  content: "\e900";
+  color: #cd201f;
+}
+.icon-instagram:before {
+  content: "\e901";
+  color: #e4405f;
+}
+.icon-twitter:before {
+  content: "\e902";
+  color: #1da1f2;
+}
+.icon-facebook:before {
+  content: "\e903";
+  color: #3b5998;
+}
+
+
+
 /*********
 Custom CSS
 **********/
@@ -238,6 +287,23 @@ body.single-dealer .sidebar {
    max-width: inherit !important;
 }
 
+.dealer-detail .dealer-detail-social {
+    text-align: center;
+}
+
+.dealer-detail .dealer-detail-social .links {
+    margin: 0 auto;
+}
+
+.dealer-detail .dealer-detail-social .links li {
+    display: inline;
+    margin: 0 0.5rem;
+}
+
+.dealer-detail .dealer-detail-social .links li span {
+    font-size: 2.5rem;
+}
+
 @media ( min-width: 62.5em ) {
 
     .dealer-detail {
@@ -271,5 +337,9 @@ body.single-dealer .sidebar {
 
     .dealer-detail  .dealer-map {
         height: 500px;
+    }
+
+    .dealer-detail .dealer-detail-social .links li span {
+        font-size: 3.5rem;
     }
 }

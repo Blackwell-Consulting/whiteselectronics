@@ -35,6 +35,8 @@
                 $logo = get_field( 'logo' );
                 $about = get_field( 'about_us' );
                 $location = get_field( 'location' );
+                $banner = get_field( 'banner' );
+                $social = get_field( 'social' );
             ?>
 
                 <?php if( !empty( $logo ) ): ?>
@@ -66,7 +68,42 @@
                     <?php echo $about; ?>
                 </div><!-- /.dealer-detail-about -->
                 <?php endif; ?>
+
                 <div class="clearfix"></div><!-- /.clearfix -->
+
+                <?php if( have_rows( 'banner' ) ): ?>
+                <div class="dealer-detail-banner gray-box">
+                    <?php
+                        while ( have_rows( 'banner' ) ) : the_row();
+
+                        //vars
+                        $banner = get_sub_field( 'banner' );
+                        $url = get_sub_field( 'url' );
+                    ?>
+                        <div class="gray-box-inner">
+                            <a href="<?php echo $url; ?>" target="_blank">
+                                <img src="<?php echo $banner['sizes']['large']; ?>" alt="<?php echo $banner['alt']; ?>" />
+                            </a>
+                        </div><!-- /.gray-box-inner -->
+                    <?php endwhile; ?>
+                </div><!-- /.dealer-detail-banner -->
+                <?php endif; ?>
+
+                <?php if( have_rows( 'social' ) ): ?>
+                <div class="dealer-detail-social gray-box">
+                    <ul class="links">
+                    <?php
+                        while ( have_rows( 'social' ) ) : the_row();
+
+                        //vars
+                        $icon = get_sub_field( 'icon' );
+                        $url = get_sub_field( 'url' );
+                    ?>
+                        <li><a href="<?php echo $url; ?>" target="_blank"><span class="icon-<?php echo $icon; ?>"></span></a></li>
+                    <?php endwhile; ?>
+                    </ul><!-- /.links -->
+                </div><!-- /.dealer-detail-social -->
+                <?php endif; ?>
             </div><!-- /.dealer-detail -->
             <div class="sidebar">
                 <h1>Filter By</h1>
