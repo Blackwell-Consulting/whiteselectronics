@@ -6,7 +6,6 @@ whitesElectronics = {
     init: function() {
 
         whitesElectronics.setupLocaleLightbox();
-        whitesElectronics.appendQueryStringToUrls();
 
         $( window ).on( 'resize', whitesElectronics.debounce( function( ) {}, 500 ) );
 
@@ -31,7 +30,7 @@ whitesElectronics = {
         if ( typeof lang !== 'undefined' ) {
             console.log('------------------------------------');
             console.log(lang);
-            console.log('------------------------------------');            
+            console.log('------------------------------------');
         } else {
             $( '.lightbox' ).delay( '200ms' ).fadeIn();
         }
@@ -40,7 +39,7 @@ whitesElectronics = {
     appendQueryStringToUrls: function() {
 
         $( 'a[href]' ).each( function() {
-            var $this = $( this ); 
+            var $this = $( this );
             var href = $this.attr( 'href' );
 
             if ( href.indexOf( '?' ) !== -1 ) {
