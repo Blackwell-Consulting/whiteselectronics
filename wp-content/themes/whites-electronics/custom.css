@@ -318,7 +318,8 @@ body.single-dealer .sidebar {
     }
 
     .dealer-detail-address,
-    .dealer-detail-about {
+    .dealer-detail-about,
+    .dealer-detail-hours {
         width: 50%;
         border-right: 2.5rem solid #fff;
     }

@@ -31,6 +31,7 @@
             <?php
                 //vars
                 $logo = get_field( 'logo' );
+                $hours = get_field( 'hours' );
                 $about = get_field( 'about_us' );
                 $location = get_field( 'location' );
                 $image = get_field( 'image' );
@@ -72,6 +73,15 @@
                     </h2>
                     <?php endif; ?>
                 </div><!-- /.dealer-detail-address -->
+
+                <?php if( !empty( $hours ) ): ?>
+                <div class="dealer-detail-hours gray-box">
+                    <h3 class="dealer-title-smaller">
+                        Store Hours
+                    </h3>
+                    <?php echo $hours; ?>
+                </div><!-- /.dealer-detail-hours -->
+                <?php endif; ?>
 
                 <?php if( !empty( $about ) ): ?>
                 <div class="dealer-detail-about gray-box">
