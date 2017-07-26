@@ -2,6 +2,8 @@
 
 if( function_exists('acf_add_local_field_group') ):
 
+if( function_exists('acf_add_local_field_group') ):
+
 acf_add_local_field_group(array (
 	'key' => 'group_5967f116799fe',
 	'title' => 'Dealer Information',
@@ -55,6 +57,25 @@ acf_add_local_field_group(array (
 			'mime_types' => '',
 		),
 		array (
+			'key' => 'field_5978a156e88cd',
+			'label' => 'Phone',
+			'name' => 'phone',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array (
 			'key' => 'field_596e771847cb4',
 			'label' => 'Location',
 			'name' => 'location',
@@ -67,10 +88,10 @@ acf_add_local_field_group(array (
 				'class' => '',
 				'id' => '',
 			),
+			'height' => '',
 			'center_lat' => '',
 			'center_lng' => '',
 			'zoom' => '',
-			'height' => '',
 		),
 		array (
 			'key' => 'field_596e869e49874',
@@ -85,10 +106,10 @@ acf_add_local_field_group(array (
 				'class' => '',
 				'id' => '',
 			),
-			'default_value' => '',
 			'tabs' => 'all',
 			'toolbar' => 'full',
 			'media_upload' => 1,
+			'default_value' => '',
 			'delay' => 0,
 		),
 		array (
@@ -104,8 +125,11 @@ acf_add_local_field_group(array (
 				'class' => '',
 				'id' => '',
 			),
+			'min' => '',
+			'max' => 1,
+			'button_label' => 'Add Row',
 			'layouts' => array (
-				'5970b3fb1a573' => array (
+				array (
 					'key' => '5970b3fb1a573',
 					'name' => 'banner',
 					'label' => 'Banner',
@@ -149,19 +173,16 @@ acf_add_local_field_group(array (
 								'id' => '',
 							),
 							'default_value' => '',
+							'maxlength' => '',
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
-							'maxlength' => '',
 						),
 					),
 					'min' => '',
 					'max' => '1',
 				),
 			),
-			'button_label' => 'Add Row',
-			'min' => '',
-			'max' => 1,
 		),
 		array (
 			'key' => 'field_5970b42847ebf',
@@ -176,8 +197,11 @@ acf_add_local_field_group(array (
 				'class' => '',
 				'id' => '',
 			),
+			'min' => '',
+			'max' => '',
+			'button_label' => 'Add Row',
 			'layouts' => array (
-				'5970b432e8b4d' => array (
+				array (
 					'key' => '5970b432e8b4d',
 					'name' => 'add',
 					'label' => 'Add your social networks',
@@ -196,6 +220,8 @@ acf_add_local_field_group(array (
 								'class' => '',
 								'id' => '',
 							),
+							'multiple' => 0,
+							'allow_null' => 0,
 							'choices' => array (
 								'none' => 'none',
 								'facebook' => 'facebook',
@@ -207,12 +233,10 @@ acf_add_local_field_group(array (
 							'default_value' => array (
 								0 => 'none',
 							),
-							'allow_null' => 0,
-							'multiple' => 0,
 							'ui' => 0,
 							'ajax' => 0,
-							'return_format' => 'value',
 							'placeholder' => '',
+							'return_format' => 'value',
 						),
 						array (
 							'key' => 'field_5970b75247ec1',
@@ -228,19 +252,16 @@ acf_add_local_field_group(array (
 								'id' => '',
 							),
 							'default_value' => '',
+							'maxlength' => '',
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
-							'maxlength' => '',
 						),
 					),
 					'min' => '',
 					'max' => '',
 				),
 			),
-			'button_label' => 'Add Row',
-			'min' => '',
-			'max' => '',
 		),
 	),
 	'location' => array (
