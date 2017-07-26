@@ -33,8 +33,11 @@
                 $logo = get_field( 'logo' );
                 $about = get_field( 'about_us' );
                 $location = get_field( 'location' );
+                $image = get_field( 'image' );
                 $banner = get_field( 'banner' );
                 $social = get_field( 'social' );
+                $address = explode( ',' , $location[‘address’] );
+                $phone = get_field( 'phone' );
             ?>
 
                 <?php if( !empty( $logo ) ): ?>
@@ -45,16 +48,28 @@
                 </div><!-- /.dealer-detail-logo -->
                 <?php endif; ?>
 
-                 <?php if( !empty( $location['address'] ) ): ?>
                 <div class="dealer-detail-map gray-box">
-                    <?php include(get_stylesheet_directory() . '/partials/map.php'); ?>
+                    <?php if( !empty( $location['address'] ) && empty( $image ) ): ?>
+                        <?php include(get_stylesheet_directory() . '/partials/map.php'); ?>
+                    <?php endif; ?>
+                    <?php if( empty( $location['address'] ) && !empty( $image ) ): ?>
+                        <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
+                    <?php endif; ?>
                 </div><!-- /.dealer-detail-map -->
-                <?php endif; ?>
 
                 <div class="dealer-detail-address gray-box">
                     <h1 class="dealer-title"><?php the_title(); ?></h1>
                     <?php if( !empty( $location['address'] ) ): ?>
-                    <h2 class="dealer-title-small"><?php echo $location['address']; ?></h2>
+                    <h2 class="dealer-title-small">
+                        <?php
+                            $address = explode( ',' , $location['address']);
+                            echo $address[0] . ', <br />';
+                            echo $address[1] . ',  <br />' . $address[2];
+                        ?>
+                        <?php if( !empty( $phone ) ): ?>
+                        <br /><?php echo $phone; ?>
+                        <?php endif; ?>
+                    </h2>
                     <?php endif; ?>
                 </div><!-- /.dealer-detail-address -->
 
