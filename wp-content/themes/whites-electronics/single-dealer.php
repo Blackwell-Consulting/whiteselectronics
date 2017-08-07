@@ -37,7 +37,9 @@
                 $image = get_field( 'image' );
                 $banner = get_field( 'banner' );
                 $social = get_field( 'social' );
-                $address = explode( ',' , $location[‘address’] );
+                if ( $location ) {
+                    $address = explode( ',' , $location[‘address’] );
+                }
                 $phone = get_field( 'phone' );
             ?>
 
