@@ -38,7 +38,7 @@
                 $banner = get_field( 'banner' );
                 $social = get_field( 'social' );
                 if ( $location ) {
-                    $address = explode( ',' , $location[‘address’] );
+                    $address = $location[‘address’];
                 }
                 $phone = get_field( 'phone' );
             ?>
@@ -65,9 +65,8 @@
                     <?php if( !empty( $location['address'] ) ): ?>
                     <h2 class="dealer-title-small">
                         <?php
-                            $address = explode( ',' , $location['address']);
-                            echo $address[0] . ', <br />';
-                            echo $address[1] . ',  <br />' . $address[2];
+                            $address = $location['address'];
+                            echo $address;
                         ?>
                         <?php if( !empty( $phone ) ): ?>
                         <br /><?php echo $phone; ?>
