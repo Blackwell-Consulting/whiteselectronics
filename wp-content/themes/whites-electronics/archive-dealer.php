@@ -63,23 +63,70 @@ get_header(); ?>
         </div><!-- /.outer-wrapper -->
         <div class="finds grid-items">
             <?php
-                $categories = get_categories( array(
+                $args = array(
                     'orderby' => 'name',
                     'order'   => 'ASC',
-                    'parent' => 0
-                ) );
+                    'parent' => 0,
+                    'hide_empty' => 0
+                );
 
-                foreach( $categories as $category ) :
+                $categories = get_categories( $args );
+                $cat =  ceil(count( $categories ) / 2);
             ?>
-                <div class="find grid-item">
-                    <a href="<?php echo get_category_link( $category->term_id ) ?>">
-                        <?php echo do_shortcode( sprintf( '[wp_custom_image_category term_id="%s"]', $category->term_id ) ); ?>
-                        <h2><?php echo $category->name ?></h2>
-                    </a>
-                </div><!-- /.find grid-item -->
-            <?php endforeach; ?>
+
+            <?php
+                $i = 0;
+                $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+                $posts_per_page = 9;
+                $offset = ( $posts_per_page * $paged ) - $posts_per_page;
+
+                $args = array(
+                    'orderby' => 'name',
+                    'parent' => 0,
+                    'hide_empty' => 0,
+                    'number' => $posts_per_page,
+                    'offset' => $offset,
+                    'posts_per_page' => 5,
+                    'paged' => $paged
+                );
+
+                $categories = get_categories( $args );
+                foreach ( $categories as $category ) :
+                    $i++;
+                    $catname = $category->name;
+                    $catttid = $category->term_taxonomy_id;
+                ?>
+                    <div class="find grid-item">
+                        <a href="<?php echo get_category_link( $category->term_id ) ?>">
+                            <?php echo do_shortcode( sprintf( '[wp_custom_image_category term_id="%s"]', $catttid ) ); ?>
+                            <h2><?php echo $category->name ?></h2>
+                        </a>
+                    </div><!-- /.find grid-item -->
+                <?php endforeach; ?>
         </div><!-- /.finds grid-items -->
         <div class="clearfix"></div><!-- /.clearfix -->
+
+
+
+        <?php
+
+        if ( $posts_per_page < $paged) {
+
+            $big = 999999999; // need an unlikely integer
+            echo '<div class="woocommerce archive"><nav class="woocommerce-pagination"><ul class="page-numbers">';
+
+            echo paginate_links( array(
+                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                'format' => '?paged=%#%',
+                'prev_text' => __( '←' ),
+                'next_text' => __( '→' ),
+                'current' => max( 1, get_query_var( 'paged' ) ),
+                'total' => $cat,
+                'type' => 'list'
+            ) );
+            echo '</ul></nav></div><!-- /.woocommerce archive -->';
+        }
+        ?>
 	</div>
 
 </main>
