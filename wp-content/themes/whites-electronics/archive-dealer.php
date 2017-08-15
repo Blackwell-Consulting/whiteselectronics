@@ -105,12 +105,8 @@ get_header(); ?>
                 <?php endforeach; ?>
         </div><!-- /.finds grid-items -->
         <div class="clearfix"></div><!-- /.clearfix -->
-
-
-
         <?php
-
-        if ( $posts_per_page < $paged) {
+        if ( $posts_per_page > $paged) {
 
             $big = 999999999; // need an unlikely integer
             echo '<div class="woocommerce archive"><nav class="woocommerce-pagination"><ul class="page-numbers">';

@@ -344,3 +344,7 @@ body.single-dealer .sidebar {
         font-size: 3.5rem;
     }
 }
+
+body.post-type-archive-dealer.gb .woocommerce.archive .woocommerce-pagination ul.page-numbers {
+    top: 0 !important;
+}
