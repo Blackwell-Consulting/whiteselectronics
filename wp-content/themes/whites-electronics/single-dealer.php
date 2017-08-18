@@ -34,12 +34,10 @@
                 $hours = get_field( 'hours' );
                 $about = get_field( 'about_us' );
                 $location = get_field( 'location' );
+                $address = get_field( 'address' );
                 $image = get_field( 'image' );
                 $banner = get_field( 'banner' );
                 $social = get_field( 'social' );
-                if ( $location ) {
-                    $address = $location[‘address’];
-                }
                 $phone = get_field( 'phone' );
             ?>
 
@@ -62,12 +60,9 @@
 
                 <div class="dealer-detail-address gray-box">
                     <h1 class="dealer-title"><?php the_title(); ?></h1>
-                    <?php if( !empty( $location['address'] ) ): ?>
+                    <?php if( !empty( $address ) ): ?>
                     <h2 class="dealer-title-small">
-                        <?php
-                            $address = $location['address'];
-                            echo $address;
-                        ?>
+                        <?php echo $address; ?>
                         <?php if( !empty( $phone ) ): ?>
                         <br /><?php echo $phone; ?>
                         <?php endif; ?>
