@@ -35,10 +35,10 @@
                 $about = get_field( 'about_us' );
                 $location = get_field( 'location' );
                 $address = get_field( 'address' );
-                $image = get_field( 'image' );
+                $image = get_field( 'store_image' );
                 $banner = get_field( 'banner' );
                 $social = get_field( 'social' );
-                $phone = get_field( 'phone' );
+                $phone = get_field( 'phone_number' );
             ?>
 
                 <?php if( !empty( $logo ) ): ?>
@@ -56,17 +56,18 @@
                     <?php if( empty( $location['address'] ) && !empty( $image ) ): ?>
                         <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
                     <?php endif; ?>
+                    <?php if( !empty( $location['address'] ) && !empty( $image ) ): ?>
+                        <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
+                    <?php endif; ?>
                 </div><!-- /.dealer-detail-map -->
 
                 <div class="dealer-detail-address gray-box">
                     <h1 class="dealer-title"><?php the_title(); ?></h1>
                     <?php if( !empty( $address ) ): ?>
-                    <h2 class="dealer-title-small">
-                        <?php echo $address; ?>
-                        <?php if( !empty( $phone ) ): ?>
-                        <br /><?php echo $phone; ?>
-                        <?php endif; ?>
-                    </h2>
+                    <?php echo $address; ?>
+                    <?php endif; ?>
+                     <?php if( !empty( $phone ) ): ?>
+                    <br /><strong><?php echo $phone; ?></strong>
                     <?php endif; ?>
                 </div><!-- /.dealer-detail-address -->
 
