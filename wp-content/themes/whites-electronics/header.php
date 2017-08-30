@@ -14,7 +14,7 @@
         <a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" class="button pay"><?php _e( 'My Account', 'woocommerce' ); ?></a>
       </div>
       <div class="language-select">
-        <?php do_action('icl_language_selector'); ?>
+        <?php custom_language_selector(); ?>
       </div>
     </div>
     <nav class="nav-header">

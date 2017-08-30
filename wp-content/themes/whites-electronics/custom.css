@@ -1,0 +1,350 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('assets/fonts/icons/icomoon.eot?p9gabm');
+  src:  url('assets/fonts/icons/icomoon.eot?p9gabm#iefix') format('embedded-opentype'),
+    url('assets/fonts/icons/icomoon.ttf?p9gabm') format('truetype'),
+    url('assets/fonts/icons/icomoon.woff?p9gabm') format('woff'),
+    url('assets/fonts/icons/icomoon.svg?p9gabm#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-linkedin:before {
+  content: "\e904";
+  color: #0077b5;
+}
+.icon-youtube:before {
+  content: "\e900";
+  color: #cd201f;
+}
+.icon-instagram:before {
+  content: "\e901";
+  color: #e4405f;
+}
+.icon-twitter:before {
+  content: "\e902";
+  color: #1da1f2;
+}
+.icon-facebook:before {
+  content: "\e903";
+  color: #3b5998;
+}
+
+
+
+/*********
+Custom CSS
+**********/
+header .logo:before {
+    background-position: -127px -124px;
+    width: 8.5rem;
+}
+
+header .shopping-cart-icon:before {
+    background-position: -368px -236px;
+}
+
+header .search-icon:before {
+    background-position: -232px -281px;
+}
+
+.social ul .facebook:before {
+    background-position: -325px -41px;
+}
+
+.social ul .twitter:before {
+    background-position: 0 -241px;
+}
+
+.social ul .youtube:before {
+    background-position: 4px -200px;
+    width: 65px;
+}
+
+.social ul .instagram:before {
+    background-position: -325px 0;
+}
+
+.lightbox__overlay {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.lightbox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    display: none;
+}
+
+.lightbox__content {
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    width: 75%;
+    max-width: 750px;
+    text-align: center;
+    padding: 25px;
+}
+
+.lightbox__content p {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: normal;
+    letter-spacing: 2px;
+}
+
+.lightbox__content header {
+    position: relative;
+    height: 50px;
+    border-bottom: none;
+    box-shadow: none;
+    margin-bottom: 25px;
+}
+
+.lightbox__content header .logo {
+    float: none
+}
+
+.lightbox__content .location-chooser {
+    padding: 10px;
+}
+
+.lightbox__content .location-chooser a {
+    display: block;
+    margin-bottom: 15px;
+}
+
+@media ( min-width: 48em ) {
+    header .logo:before {
+        background-position: -4px -124px;
+        width: 12.2rem;
+    }
+
+    .lightbox__content header .logo::before {
+        background-position: -128px -124px;
+        width: 84px;
+        height: 53px;
+    }
+
+    .lightbox__content p {
+        font-size: 28px;
+    }
+
+    .lightbox__content .location-chooser a {
+        margin-bottom: 0;
+    }
+
+    .lightbox__content .location-chooser a:first-child {
+        float: left;
+    }
+
+    .lightbox__content .location-chooser a:last-child {
+        float: right;
+        margin-right: -55px;
+    }
+}
+
+/************
+Store Locator
+*************/
+#wpsl-wrap ul li {
+    cursor: pointer;
+}
+
+#wpsl-wrap ul li.wpsl-preloader:hover {
+    background: transparent;
+    cursor: default;
+}
+
+#wpsl-wrap ul li:not(.wpsl-preloader):hover {
+    background: #409eff;
+}
+
+#wpsl-wrap ul li:hover a,
+#wpsl-wrap ul li:hover p {
+    color: #fff;
+}
+
+#wpsl-wrap .wpsl-directions {
+    text-decoration: underline;
+}
+
+#wpsl-wrap #wpsl-search-btn {
+    background: #409eff;
+    color: #fff;
+}
+
+.grid-items.finds {
+    border-right: 2.5rem solid #fff;
+    border-left: 2.5rem solid #fff;
+}
+
+/**************
+FindA Dealer UK
+***************/
+.find-a-dealer-uk .find.grid-item {
+    position: relative;
+}
+
+.find-a-dealer-uk .find.grid-item h2 {
+    position: absolute;
+    bottom: -1px;
+    text-transform: uppercase;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1.5;
+    background: #fff;
+    text-align: center;
+    font-family: Rajdhani,sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    width: 100%;
+}
+
+.find-a-dealer-uk .find.grid-item:hover h2 {
+    color: #409eff;
+}
+
+.gray-box {
+    background: #ebebeb;
+    padding: 20px;
+    margin-bottom: 4rem;
+}
+
+.gray-box-inner {
+    background: #fff;
+}
+
+.dealer-detail {
+    width: 100%;
+    padding: .8rem .4rem .4rem;
+    margin-top: 4rem;
+    border-right: 2.5rem solid #fff;
+    border-left: 2.5rem solid #fff;
+}
+
+.dealer-detail-logo {
+    text-align: center;
+}
+
+.dealer-detail-logo img {
+    margin: 0 auto;
+}
+
+.detector-selector-banner {
+    clear: both;
+}
+
+body.single-dealer .sidebar {
+     margin-bottom: 4rem;
+}
+
+.dealer-detail .dealer-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.dealer-detail .dealer-title-small {
+    font-size: 1.5rem;
+}
+
+.dealer-detail .dealer-title-smaller {
+    font-size: 2.0rem;
+    margin-bottom: 1rem;
+}
+
+.dealer-detail  .dealer-map {
+	width: 100%;
+	height: 250px;
+	border: #ccc solid 1px;
+}
+
+/* fixes potential theme css conflict */
+.dealer-detail  .dealer-map img {
+   max-width: inherit !important;
+}
+
+.dealer-detail .dealer-detail-social {
+    text-align: center;
+}
+
+.dealer-detail .dealer-detail-social .links {
+    margin: 0 auto;
+}
+
+.dealer-detail .dealer-detail-social .links li {
+    display: inline;
+    margin: 0 0.5rem;
+}
+
+.dealer-detail .dealer-detail-social .links li span {
+    font-size: 2.5rem;
+}
+
+@media ( min-width: 62.5em ) {
+
+    .dealer-detail {
+        width: calc( 100% - 17% );
+        float: right;
+        margin-top: 6.5rem;
+    }
+
+    .dealer-detail .dealer-detail-map {
+        float: right;
+        width: 50%;
+    }
+
+    .dealer-detail-address,
+    .dealer-detail-about,
+    .dealer-detail-hours {
+        width: 50%;
+        border-right: 2.5rem solid #fff;
+    }
+
+    .dealer-detail .dealer-title {
+        font-size: 4.0rem;
+    }
+
+    .dealer-detail .dealer-title-small {
+        font-size: 3.0rem;
+    }
+
+    .dealer-detail .dealer-title-smaller {
+        font-size: 2.0rem;
+    }
+
+    .dealer-detail  .dealer-map {
+        height: 500px;
+    }
+
+    .dealer-detail .dealer-detail-social .links li span {
+        font-size: 3.5rem;
+    }
+}
+
+body.post-type-archive-dealer.gb .woocommerce.archive .woocommerce-pagination ul.page-numbers {
+    top: 0 !important;
+}

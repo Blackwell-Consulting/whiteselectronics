@@ -55,10 +55,20 @@ include_once('functions/wordpress/wpsl-csv-functions.php');
 // Gravity Forms
 include_once('functions/wordpress/gravityforms.php');
 
-
+// ACF Field Data
+include_once('functions/acf/all.php');
 
 add_action("wp_ajax_current_cart_icon", 'current_cart_icon');
 add_action("wp_ajax_nopriv_current_cart_icon", 'current_cart_icon');
+
+function get_id_by_slug($page_slug) {
+    $page = get_page_by_path($page_slug);
+    if ($page) {
+        return $page->ID;
+    } else {
+        return null;
+    }
+}
 
 function current_cart_icon () {
 	?>
@@ -83,3 +93,35 @@ function current_cart_icon () {
 	<?php
 	exit;die;
 }
+
+function toolset_fix_custom_posts_per_page( $query_string ){
+    if( is_admin() || ! is_array( $query_string ) )
+        return $query_string;
+
+    $post_types_to_fix = array(
+        array(
+            'post_type' => 'dealer',
+            'posts_per_page' => 2
+        ),
+        // add another if you want
+        /*
+        array(
+            'post_type' => 'movie',
+            'posts_per_page' => 2
+        ),
+        */
+    );
+
+    foreach( $post_types_to_fix as $fix ) {
+        if( array_key_exists( 'post_type', $query_string )
+            && $query_string['post_type'] == $fix['post_type']
+        ) {
+            $query_string['posts_per_page'] = $fix['posts_per_page'];
+            return $query_string;
+        }
+    }
+
+    return $query_string;
+}
+
+add_filter( 'request', 'toolset_fix_custom_posts_per_page' );
