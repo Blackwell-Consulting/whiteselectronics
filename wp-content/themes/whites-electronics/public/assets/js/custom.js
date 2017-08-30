@@ -28,9 +28,6 @@ whitesElectronics = {
         var lang = whitesElectronics.setupLocale()[ 'lang' ];
 
         if ( typeof lang !== 'undefined' ) {
-            console.log('------------------------------------');
-            console.log(lang);
-            console.log('------------------------------------');
             whitesElectronics.appendQueryStringToUrls();
         } else {
             $( '.lightbox' ).delay( '200ms' ).fadeIn();
