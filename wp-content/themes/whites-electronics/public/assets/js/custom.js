@@ -31,6 +31,7 @@ whitesElectronics = {
             console.log('------------------------------------');
             console.log(lang);
             console.log('------------------------------------');
+            whitesElectronics.appendQueryStringToUrls();
         } else {
             $( '.lightbox' ).delay( '200ms' ).fadeIn();
         }
