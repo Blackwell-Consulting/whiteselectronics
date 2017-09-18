@@ -348,3 +348,40 @@ body.single-dealer .sidebar {
 body.post-type-archive-dealer.gb .woocommerce.archive .woocommerce-pagination ul.page-numbers {
     top: 0 !important;
 }
+
+.shop_attributes .attribute span.spec-icon.frequency::before {
+    background-position: -204px -242px !important;
+}
+
+.shop_attributes .attribute span.spec-icon.audio-output::before {
+    /* background-size: 389px 360px !important; */
+    background-position: -225px -199px !important;
+}
+
+.shop_attributes .attribute span.spec-icon.standard-coil::before {
+    background-position: -324px -238px !important;
+}
+
+.shop_attributes .attribute span.spec-icon.optional-coils::before {
+    background-position: -81px -281px !important;
+}
+
+.shop_attributes .attribute span.spec-icon.batteries::before {
+    background-position: -21px -321px !important;
+}
+
+.shop_attributes .attribute span.spec-icon.battery-life::before {
+    background-position: -43px -321px !important;
+}
+
+.shop_attributes .attribute span.spec-icon.audio-modulation::before {
+    background-position: 0 -321px !important;
+}
+
+.shop_attributes .attribute span.spec-icon.backlit-display::before {
+    background-position: -369px 2px !important;
+}
+
+.shop_attributes .attribute span.spec-icon.waterproof::before {
+    background-position: -176px -200px !important;
+}
