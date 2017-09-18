@@ -354,7 +354,6 @@ body.post-type-archive-dealer.gb .woocommerce.archive .woocommerce-pagination ul
 }
 
 .shop_attributes .attribute span.spec-icon.audio-output::before {
-    /* background-size: 389px 360px !important; */
     background-position: -225px -199px !important;
 }
 
