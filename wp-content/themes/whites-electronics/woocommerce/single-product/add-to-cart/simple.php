@@ -45,7 +45,11 @@ if ( ! $product->is_purchasable() ) {
 
 	<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
 
-	<a href="<?php echo home_url('/find-a-dealer'); ?>" class="find-dealder">Find A Dealer</a>
+	<?php if( ICL_LANGUAGE_CODE ==='en' ): ?>
+		<a href="<?php echo home_url( '/find-a-dealer' ); ?>" class="find-dealder">Find A Dealer</a>
+	<?php elseif( ICL_LANGUAGE_CODE ==='gb' ): ?>
+		<a href="<?php echo home_url( '/find-a-dealer-uk/' ); ?>" class="find-dealder">Find A Dealer</a>
+	<?php endif; ?>
 
 <?php else: ?>
 
