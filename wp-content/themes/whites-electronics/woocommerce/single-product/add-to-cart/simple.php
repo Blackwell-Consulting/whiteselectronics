@@ -55,7 +55,11 @@ if ( ! $product->is_purchasable() ) {
 
 	<form>
 		<button type="submit" class="out-of-stock button alt" disabled>Out Of Stock</button>
-		<a href="<?php echo home_url('/find-a-dealer'); ?>" class="find-dealder">Find A Dealer</a>
+		<?php if( ICL_LANGUAGE_CODE ==='en' ): ?>
+			<a href="<?php echo home_url( '/find-a-dealer' ); ?>" class="find-dealder">Find A Dealer</a>
+		<?php elseif( ICL_LANGUAGE_CODE ==='gb' ): ?>
+			<a href="<?php echo home_url( '/find-a-dealer-uk/' ); ?>" class="find-dealder">Find A Dealer</a>
+		<?php endif; ?>
 	</form>
 
 <?php endif; ?>
